@@ -101,6 +101,7 @@
             font-family: 'Playfair Display', serif;
             animation: fadeIn 1.2s ease-out forwards;
             animation-delay: 1.5s;
+            opacity: 0;
         }
 
         .photos-grid {
@@ -132,12 +133,14 @@
             background-image: url(img/6.jpg);
             animation: fadeIn 1.2s ease-out forwards;
             animation-delay: 0.5s;
+            opacity: 0;
         }
 
         .photo-placeholder:nth-child(3){
             background-image: url(img/3.jpg);
             animation: fadeIn 1.2s ease-out forwards;
             animation-delay: 1s;
+            opacity: 0;
         }
 
         .photo-placeholder:nth-child(2) {
@@ -145,6 +148,7 @@
             background-image: url(img/2.jpg);
             animation: fadeIn 1.2s ease-out forwards;
             animation-delay: 1.5s;
+            opacity: 0;
         }
 
         .intro-text {
@@ -477,6 +481,7 @@
             document.addEventListener('DOMContentLoaded', () => {
                 const largePhotos = document.querySelectorAll('.large-photo');
                 largePhotos.forEach((photo, index) => {
+                    photo.style.opacity = '0';
                     photo.style.animationDelay = `${1.5 + index * 0.1}s`;
                     photo.style.animation = 'fadeIn 1.2s ease-out forwards';
                 });
