@@ -165,7 +165,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
-            margin: 40px 0;
+            margin: 20px 0;
+            height: 70vh;
         }
 
         .save-date-image {
@@ -307,10 +308,10 @@
 
         .large-photo {
             width: 100%;
-            height: 200px;
+            height: 100%;
             background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
             border-radius: 10px;
-            margin: 20px 0;
+            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -322,7 +323,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .panel {
-                padding: 30px 0;
+                padding: 20px 0;
             }
 
             .section {
@@ -343,6 +344,7 @@
 
             .save-date-container {
                 gap: 20px;
+                height: 70vh;
             }
 
             .save-date-content {
@@ -355,6 +357,10 @@
 
             .date {
                 font-size: 1.6rem;
+            }
+
+            .intro-text {
+                margin: 5px 0;
             }
 
             .photos-grid {
@@ -398,7 +404,7 @@
 
         @media (max-width: 480px) {
             .panel {
-                padding: 20px 0;
+                padding: 15px 0;
             }
 
             .name {
@@ -407,6 +413,7 @@
 
             .save-date-container {
                 gap: 15px;
+                height: 70vh;
             }
 
             .save-date-content {
@@ -419,6 +426,10 @@
 
             .date {
                 font-size: 1.4rem;
+            }
+
+            .intro-text {
+                margin: 3px 0;
             }
 
             .photos-grid {
