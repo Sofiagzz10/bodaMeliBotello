@@ -99,6 +99,8 @@
             color: #000;
             margin: 15px 0;
             font-family: 'Playfair Display', serif;
+            animation: fadeIn 1.2s ease-out forwards;
+            animation-delay: 1.5s;
         }
 
         .photos-grid {
@@ -128,15 +130,21 @@
 
         .photo-placeholder:nth-child(1){
             background-image: url(img/6.jpg);
+            animation: fadeIn 1.2s ease-out forwards;
+            animation-delay: 0.5s;
         }
 
         .photo-placeholder:nth-child(3){
             background-image: url(img/3.jpg);
+            animation: fadeIn 1.2s ease-out forwards;
+            animation-delay: 1s;
         }
 
         .photo-placeholder:nth-child(2) {
             height: 370px;
             background-image: url(img/2.jpg);
+            animation: fadeIn 1.2s ease-out forwards;
+            animation-delay: 1.5s;
         }
 
         .intro-text {
@@ -465,14 +473,14 @@
     </div>
 
     <script>
-        // Animación de entrada para las fotos
-        document.addEventListener('DOMContentLoaded', () => {
-            const photos = document.querySelectorAll('.photo-placeholder, .large-photo');
-            photos.forEach((photo, index) => {
-                photo.style.animationDelay = `${1.5 + index * 0.1}s`;
-                photo.style.animation = 'fadeIn 1.2s ease-out forwards';
+                    // Animación de entrada para las fotos (solo las grandes fotos de otras secciones)
+            document.addEventListener('DOMContentLoaded', () => {
+                const largePhotos = document.querySelectorAll('.large-photo');
+                largePhotos.forEach((photo, index) => {
+                    photo.style.animationDelay = `${1.5 + index * 0.1}s`;
+                    photo.style.animation = 'fadeIn 1.2s ease-out forwards';
+                });
             });
-        });
 
         // Efecto de scroll suave entre secciones (opcional)
         /* 
