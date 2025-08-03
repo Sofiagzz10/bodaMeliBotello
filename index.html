@@ -335,6 +335,7 @@
             .photos-grid {
                 margin: 10px -10px;
                 align-items: center;
+                gap: 13px;
             }
 
             .color-palette {
@@ -348,11 +349,7 @@
         }
 
         /* Hover effects */
-        .photo-placeholder:hover,
-        .large-photo:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
+        /* Removed hover effects to prevent shaking */
 
         /* Smooth scrolling */
         html {
@@ -459,37 +456,8 @@
     </div>
 
     <script>
-        // Animaciones adicionales al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observar todos los elementos con animación
+        // Animación de entrada para las fotos
         document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // Efecto de parallax suave en el fondo
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallax = document.querySelector('body');
-                const speed = scrolled * 0.5;
-                parallax.style.transform = `translateY(${speed}px)`;
-            });
-
-            // Animación de entrada para las fotos
             const photos = document.querySelectorAll('.photo-placeholder, .large-photo');
             photos.forEach((photo, index) => {
                 photo.style.animationDelay = `${1.5 + index * 0.1}s`;
@@ -497,7 +465,8 @@
             });
         });
 
-        // Efecto de scroll suave entre secciones
+        // Efecto de scroll suave entre secciones (opcional)
+        /* 
         document.querySelectorAll('.panel').forEach((panel, index) => {
             panel.addEventListener('click', () => {
                 if (index < document.querySelectorAll('.panel').length - 1) {
@@ -507,15 +476,11 @@
                 }
             });
         });
+        */
 
-        // Animación de carga inicial
+        // Animación de carga inicial (simplificada)
         window.addEventListener('load', () => {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 1s ease-in';
-            
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
+            // Carga simple sin efectos adicionales
         });
     </script>
 </body>
