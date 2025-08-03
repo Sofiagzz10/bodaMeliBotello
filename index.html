@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación de Boda - Melissa y Joel</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -157,7 +162,8 @@
             color: #333;
             text-align: center;
             margin: 10px 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 3px;
         }
 
         .save-date-container {
@@ -197,7 +203,7 @@
             text-align: center;
             color: #000;
             margin: 15px 0;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Quicksand', sans-serif;
         }
 
         .title {
@@ -207,7 +213,7 @@
             margin: 25px 0 15px 0;
             color: #000;
             letter-spacing: 0.1em;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Playfair Display', serif;
         }
 
         .date {
@@ -216,7 +222,8 @@
             text-align: center;
             color: #000;
             margin: 15px 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 3px;
         }
 
         .description {
@@ -225,7 +232,8 @@
             color: #555;
             margin: 10px 0;
             font-style: italic;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 3px;
         }
 
         .location-info {
@@ -258,12 +266,12 @@
 
         .time {
             font-weight: bold;
-            color: #000;
+            color: #333;
             font-size: 1.1rem;
         }
 
         .event {
-            color: #555;
+            color: #333;
             text-align: right;
             flex: 1;
             margin-left: 20px;
@@ -309,15 +317,12 @@
         .large-photo {
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-            border-radius: 10px;
+            background-image: url(img/1.jpg);
             margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.9rem;
-            color: #666;
-            border: 2px solid #ddd;
         }
 
         /* Responsive Design */
@@ -485,7 +490,7 @@
                 </div>
                 <div class="save-date-container">
                     <div class="save-date-image">
-                        <div class="large-photo">🥂 Celebración</div>
+                        <div class="large-photo"></div>
                     </div>
                     <div class="save-date-content">
                         <div class="title">SAVE THE DATE</div>
