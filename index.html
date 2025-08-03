@@ -176,8 +176,6 @@
 
         .save-date-image {
             display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100%;
             background-position: center top;
         }
@@ -422,20 +420,36 @@
             }
 
             .save-date-container {
-                gap: 15px;
+                grid-template-columns: 1fr;
+                gap: 20px;
                 height: 70vh;
             }
 
+            .save-date-image {
+                height: 45vh;
+            }
+
             .save-date-content {
-                font-size: 0.8rem;
+                height: 25vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .title {
-                font-size: 1.1rem;
+                font-size: 2.5rem;
+                margin: 10px 0;
             }
 
             .date {
-                font-size: 1.4rem;
+                font-size: 3rem;
+                margin: 10px 0;
+            }
+
+            .description {
+                font-size: 1.2rem;
+                margin: 10px 0;
             }
 
             .intro-text {
