@@ -178,6 +178,7 @@
             display: flex;
             height: 100%;
             background-position: center top;
+            align-items: flex-start;
         }
 
         .save-date-content {
@@ -225,6 +226,18 @@
             font-style: italic;
             font-family: 'Montserrat', sans-serif;
             letter-spacing: 3px;
+        }
+
+        .calendar-link {
+            color: #555;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .calendar-link:hover {
+            color: #000;
+            text-decoration: underline;
         }
 
         .location-info {
@@ -419,14 +432,23 @@
                 font-size: 2rem;
             }
 
+            .intro-text {
+                font-size: 0.9rem;
+                margin: 10px 20px;
+                line-height: 1.4;
+            }
+
             .save-date-container {
                 grid-template-columns: 1fr;
                 gap: 20px;
                 height: 70vh;
+                margin: 0;
             }
 
             .save-date-image {
                 height: 45vh;
+                margin: 0;
+                padding: 0;
             }
 
             .save-date-content {
@@ -435,6 +457,8 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                z-index: 10;
+                position: relative;
             }
 
             .title {
@@ -450,10 +474,6 @@
             .description {
                 font-size: 1.2rem;
                 margin: 10px 0;
-            }
-
-            .intro-text {
-                margin: 3px 0;
             }
 
             .photos-grid {
@@ -514,7 +534,9 @@
                     <div class="save-date-content">
                         <div class="title">SAVE THE DATE</div>
                         <div class="date">25.10.2025</div>
-                        <div class="description">Guardar en el calendario</div>
+                        <div class="description">
+                            <a href="#" class="calendar-link" onclick="addToCalendar()">Guardar en el calendario</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -611,6 +633,23 @@
             });
         });
         */
+
+        // Función para agregar evento al calendario
+        function addToCalendar() {
+            const event = {
+                title: 'Boda de Melissa y Joel',
+                start: '2025-10-25T16:30:00',
+                end: '2025-10-25T22:00:00',
+                location: 'Ciudad de Pyatigorsk, Avenida Kirova, 65, Restaurante "Krysha"',
+                description: 'Nos complace invitarte a compartir con nosotros el comienzo de nuestra vida juntos, con la bendición de Dios y nuestros padres.'
+            };
+
+            // Crear enlace para Google Calendar
+            const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start.replace(/[-:]/g, '')}/${event.end.replace(/[-:]/g, '')}&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(event.location)}`;
+            
+            // Abrir en nueva pestaña
+            window.open(googleUrl, '_blank');
+        }
 
         // Animación de carga inicial (simplificada)
         window.addEventListener('load', () => {
