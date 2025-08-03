@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda - Darya & Nikolay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            position: relative;
+        }
+
+        .panel:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            width: 100%;
+            max-width: 80%;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            text-align: center;
+        }
+
+        .section:nth-child(1) { 
+            animation-delay: 0.5s; 
+        }
+        .section:nth-child(2) { 
+            animation-delay: 0.7s; 
+        }
+        .section:nth-child(3) { 
+            animation-delay: 0.9s; 
+        }
+        .section:nth-child(4) { 
+            animation-delay: 1.1s; 
+        }
+        .section:nth-child(5) { 
+            animation-delay: 1.3s; 
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .names {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: #000;
+            margin: 15px 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+            align-items: center;
+        }
+
+        .photo-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+            transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .photo-placeholder:nth-child(1),
+        .photo-placeholder:nth-child(3) {
+            height: 300px;
+        }
+
+        .photo-placeholder:nth-child(1){
+            background-image: url(img/6.jpg);
+        }
+
+        .photo-placeholder:nth-child(3){
+            background-image: url(img/3.jpg);
+        }
+
+        .photo-placeholder:nth-child(2) {
+            height: 370px;
+            background-image: url(img/2.jpg);
+        }
+
+        .intro-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: center;
+            margin: 30px 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 25px 0 15px 0;
+            color: #000;
+            letter-spacing: 0.1em;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .date {
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+            margin: 15px 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .description {
+            font-size: 1rem;
+            text-align: center;
+            color: #555;
+            margin: 10px 0;
+            font-style: italic;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .location-info {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .address {
+            font-size: 1.1rem;
+            color: #333;
+            text-align: center;
+            line-height: 1.5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .time {
+            font-weight: bold;
+            color: #000;
+            font-size: 1.1rem;
+        }
+
+        .event {
+            color: #555;
+            text-align: right;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .color-1 { background: #d4a5a5; }
+        .color-2 { background: #b8a9c9; }
+        .color-3 { background: #a5b8d4; }
+        .color-4 { background: #a5d4c9; }
+
+        .dress-code {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin: 15px 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+        }
+
+        .designer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 30px;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 0.1em;
+        }
+
+        .large-photo {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            border: 2px solid #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .panel {
+                padding: 30px 0;
+            }
+
+            .section {
+                max-width: 100%;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .date {
+                font-size: 1.8rem;
+            }
+
+            .photos-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+                margin: 10px -15px;
+                align-items: center;
+            }
+
+            .photo-placeholder:nth-child(1),
+            .photo-placeholder:nth-child(3) {
+                height: 350px;
+            }
+
+            .photo-placeholder:nth-child(2) {
+                height: 400px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                text-align: center;
+            }
+
+            .event {
+                text-align: center;
+                margin-left: 0;
+            }
+
+            .color-palette {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .panel {
+                padding: 20px 0;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .photos-grid {
+                margin: 10px -10px;
+                align-items: center;
+            }
+
+            .color-palette {
+                gap: 8px;
+            }
+
+            .color-swatch {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        /* Hover effects */
+        .photo-placeholder:hover,
+        .large-photo:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sección 1: Nombres y Fotos -->
+        <div class="panel">
+            <div class="section">
+                <div class="names">
+                    <div class="name">MELISSA</div>
+                    <div class="photos-grid">
+                        <div class="photo-placeholder"></div>
+                        <div class="photo-placeholder"></div>
+                        <div class="photo-placeholder"></div>
+                    </div>
+                    <div class="name">JOEL</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 2: Save the Date -->
+        <div class="panel">
+            <div class="section">
+                <div class="intro-text">
+                    ¡Queridos amigos y familiares! Pronto tendrá lugar un evento muy importante en nuestras vidas - ¡nuestra boda!
+                </div>
+                <div class="title">SAVE THE DATE</div>
+                <div class="date">09.09.2023</div>
+                <div class="description">un día maravilloso cuando nos convertiremos en familia</div>
+                <div class="large-photo">🥂 Celebración</div>
+                <div class="intro-text">
+                    ¡Te invitamos a compartir con nosotros este día tan especial!
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 3: Ubicación -->
+        <div class="panel">
+            <div class="section">
+                <div class="title">LOCATION</div>
+                <div class="location-info">
+                    <div class="address">
+                        Te esperamos en:<br>
+                        <strong>Ciudad de Pyatigorsk<br>
+                        Avenida Kirova, 65<br>
+                        Restaurante "Krysha"</strong>
+                    </div>
+                </div>
+                <div class="large-photo">🏰 Restaurante</div>
+            </div>
+        </div>
+
+        <!-- Sección 4: Cronograma -->
+        <div class="panel">
+            <div class="section">
+                <div class="large-photo">💒 Ceremonia</div>
+                <div class="title">TIMING OF THE DAY</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="time">16:30</span>
+                        <span class="event">— Llegada y acomodación de invitados</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">17:00</span>
+                        <span class="event">— Ceremonia nupcial</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">18:00</span>
+                        <span class="event">— Inicio del banquete</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">21:00</span>
+                        <span class="event">— Pastel de bodas</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">22:00</span>
+                        <span class="event">— Fuegos artificiales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 5: Detalles -->
+        <div class="panel">
+            <div class="section">
+                <div class="large-photo">✨ Celebración</div>
+                <div class="title">DETAILS</div>
+                <div class="color-palette">
+                    <div class="color-swatch color-1"></div>
+                    <div class="color-swatch color-2"></div>
+                    <div class="color-swatch color-3"></div>
+                    <div class="color-swatch color-4"></div>
+                </div>
+                <div class="dress-code">
+                    Te agradeceríamos si al elegir tu atuendo te mantienes dentro de la paleta de colores de nuestra celebración
+                </div>
+                <div class="designer">DESIGNED BY SOR.NIKS</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animaciones adicionales al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos los elementos con animación
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Efecto de parallax suave en el fondo
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('body');
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            });
+
+            // Animación de entrada para las fotos
+            const photos = document.querySelectorAll('.photo-placeholder, .large-photo');
+            photos.forEach((photo, index) => {
+                photo.style.animationDelay = `${1.5 + index * 0.1}s`;
+                photo.style.animation = 'fadeIn 1.2s ease-out forwards';
+            });
+        });
+
+        // Efecto de scroll suave entre secciones
+        document.querySelectorAll('.panel').forEach((panel, index) => {
+            panel.addEventListener('click', () => {
+                if (index < document.querySelectorAll('.panel').length - 1) {
+                    document.querySelectorAll('.panel')[index + 1].scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animación de carga inicial
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s ease-in';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
