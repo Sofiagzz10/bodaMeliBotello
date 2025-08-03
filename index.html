@@ -179,6 +179,18 @@
             height: 100%;
             background-position: center top;
             align-items: flex-start;
+            justify-content: center;
+        }
+
+        .save-date-photo {
+            background-image: url(img/1.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            align-self: flex-start;
         }
 
         .save-date-content {
@@ -229,15 +241,22 @@
         }
 
         .calendar-link {
-            color: #555;
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 8px 16px;
             text-decoration: none;
-            cursor: pointer;
-            transition: color 0.3s ease;
+            border: 1px solid #000;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin: 10px 0;
         }
 
         .calendar-link:hover {
+            background: #fff;
             color: #000;
-            text-decoration: underline;
         }
 
         .location-info {
@@ -440,25 +459,27 @@
 
             .save-date-container {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 30px;
                 height: 70vh;
                 margin: 0;
+                padding: 0;
             }
 
             .save-date-image {
-                height: 45vh;
+                height: 40vh;
                 margin: 0;
                 padding: 0;
             }
 
             .save-date-content {
-                height: 25vh;
+                height: 30vh;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
                 z-index: 10;
                 position: relative;
+                padding-top: 20px;
             }
 
             .title {
@@ -535,7 +556,7 @@
                         <div class="title">SAVE THE DATE</div>
                         <div class="date">25.10.2025</div>
                         <div class="description">
-                            <a href="#" class="calendar-link" onclick="addToCalendar()">Guardar en el calendario</a>
+                            <a href="#" class="calendar-link" onclick="addToCalendar()">AGREGAR AL CALENDARIO</a>
                         </div>
                     </div>
                 </div>
@@ -638,9 +659,9 @@
         function addToCalendar() {
             const event = {
                 title: 'Boda de Melissa y Joel',
-                start: '2025-10-25T16:30:00',
-                end: '2025-10-25T22:00:00',
-                location: 'Ciudad de Pyatigorsk, Avenida Kirova, 65, Restaurante "Krysha"',
+                start: '2025-10-25T19:30:00',
+                end: '2025-10-25T23:00:00',
+                location: 'Zanq by Cinco Catering',
                 description: 'Nos complace invitarte a compartir con nosotros el comienzo de nuestra vida juntos, con la bendición de Dios y nuestros padres.'
             };
 
