@@ -22,6 +22,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            width: 100%;
         }
 
         .container {
@@ -172,7 +173,39 @@
             color: #333;
             font-family: 'Arial', sans-serif;
             letter-spacing: 3px;
-            margin: 0 auto 5% auto;
+            margin: 0 auto 2% auto;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 3%;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: #000;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .save-date-container {
@@ -266,7 +299,7 @@
 
             @media (max-width: 480px) {
                 .location-container {
-                    grid-template-columns: 1fr 1fr; /* Mantener columnas lado a lado */
+                    grid-template-columns: 1.5fr 1fr; /* Ajustar proporción */
                     gap: 15px;
                     height: auto;
                     margin: 0 10px;
@@ -284,6 +317,19 @@
 
                 .address {
                     font-size: 0.9rem;
+                }
+
+                .countdown-container {
+                    gap: 15px;
+                    margin-bottom: 2%;
+                }
+
+                .countdown-number {
+                    font-size: 2rem;
+                }
+
+                .countdown-label {
+                    font-size: 0.7rem;
                 }
             }
 
@@ -552,11 +598,15 @@
             }
 
             .location-container {
-                grid-template-columns: 1fr 1fr; /* Mantener dos columnas */
+                grid-template-columns: 1.5fr 1fr; /* Ajustar proporción */
                 gap: 20px;
                 height: auto;
                 margin: 0 20px;
                 padding: 0;
+            }
+
+            .title {
+                font-size: 1.3rem;
             }
 
             .save-date-image {
@@ -660,8 +710,23 @@
         <!-- Sección 3: Ubicación -->
         <div class="panel">
             <div class="section">
-                <div class="intro-text">
-                    ¡Te invitamos a compartir con nosotros este día tan especial!
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">DÍAS</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">HORAS</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">MINUTOS</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">SEGUNDOS</div>
+                    </div>
                 </div>
                 <div class="location-container">
                     <div class="location-content">
@@ -781,6 +846,27 @@
             // Abrir en nueva pestaña
             window.open(googleUrl, '_blank');
         }
+
+        // Contador regresivo
+        function updateCountdown() {
+            const weddingDate = new Date('2025-10-25T17:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Actualizar contador cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Ejecutar inmediatamente
 
         // Animación de carga inicial (simplificada)
         window.addEventListener('load', () => {
