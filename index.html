@@ -43,6 +43,11 @@
             position: relative;
         }
 
+        .panel:nth-child(1) {
+            justify-content: center;
+            align-items: center;
+        }
+
         .panel:nth-child(2) {
             animation-delay: 0.3s;
         }
@@ -203,6 +208,84 @@
             align-items: center;     /* centra horizontalmente */
             text-align: center;
         }
+
+        .location-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            height: 80vh;
+        }
+
+        .location-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .location-image {
+            display: flex;
+            height: 100%;
+            background-position: center top;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .location-photo {
+            background-image: url(img/4.jpg);
+            background-size: cover;
+            background-position: center top !important;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            align-self: flex-start;
+        }
+
+        .location-details {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .ceremony-location,
+        .reception-location {
+            text-align: center;
+        }
+
+                    .ceremony-location h3,
+            .reception-location h3 {
+                font-size: 1.5rem;
+                font-weight: 300;
+                letter-spacing: 0.2em;
+                color: #000;
+                margin-bottom: 15px;
+                font-family: 'Playfair Display', serif;
+            }
+
+            @media (max-width: 480px) {
+                .location-container {
+                    grid-template-columns: 1fr 1fr; /* Mantener columnas lado a lado */
+                    gap: 15px;
+                    height: auto;
+                    margin: 0 10px;
+                }
+
+                .location-details {
+                    gap: 20px;
+                }
+
+                .ceremony-location h3,
+                .reception-location h3 {
+                    font-size: 1.2rem;
+                    margin-bottom: 10px;
+                }
+
+                .address {
+                    font-size: 0.9rem;
+                }
+            }
 
         .couple-names {
             font-size: 4rem;
@@ -468,6 +551,14 @@
                 padding: 0;
             }
 
+            .location-container {
+                grid-template-columns: 1fr 1fr; /* Mantener dos columnas */
+                gap: 20px;
+                height: auto;
+                margin: 0 20px;
+                padding: 0;
+            }
+
             .save-date-image {
                 height: 50vh; /* Altura fija para la imagen */
                 width: 100%; /* Ancho completo */
@@ -566,22 +657,38 @@
                     </div>
     </div>
 
-<!-- Sección 3: Ubicación -->
+        <!-- Sección 3: Ubicación -->
         <div class="panel">
             <div class="section">
                 <div class="intro-text">
                     ¡Te invitamos a compartir con nosotros este día tan especial!
                 </div>
-                <div class="title">LOCATION</div>
-                <div class="location-info">
-                    <div class="address">
-                        Te esperamos en:<br>
-                        <strong>Ciudad de Pyatigorsk<br>
-                        Avenida Kirova, 65<br>
-                        Restaurante "Krysha"</strong>
+                <div class="location-container">
+                    <div class="location-content">
+                        <div class="title">LOCATION</div>
+                        <div class="location-details">
+                            <div class="ceremony-location">
+                                <h3>CEREMONIA</h3>
+                                <div class="address">
+                                    <strong>Iglesia Ortodoxa de San Miguel<br>
+                                    Calle Lermontov, 15<br>
+                                    Ciudad de Pyatigorsk</strong>
+                                </div>
+                            </div>
+                            <div class="reception-location">
+                                <h3>RECEPCIÓN</h3>
+                                <div class="address">
+                                    <strong>Restaurante "Krysha"<br>
+                                    Avenida Kirova, 65<br>
+                                    Ciudad de Pyatigorsk</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-image">
+                        <div class="large-photo location-photo"></div>
                     </div>
                 </div>
-                <div class="large-photo">🏰 Restaurante</div>
             </div>
         </div>
 
