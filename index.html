@@ -433,11 +433,13 @@
         .timeline-item:nth-child(odd)::before {
             right: -10px;
             left: auto;
+            background: repeating-linear-gradient(to left, #333 0, #333 2px, transparent 2px, transparent 4px);
         }
 
         .timeline-item:nth-child(even)::before {
             left: -10px;
             right: auto;
+            background: repeating-linear-gradient(to right, #333 0, #333 2px, transparent 2px, transparent 4px);
         }
 
         .timeline-content {
@@ -596,7 +598,7 @@
             }
 
             .countdown-container {
-                margin: 2% auto 4% auto;
+                margin: -10px auto 4% auto;
             }
 
             .location-container {
@@ -627,7 +629,7 @@
 
             .countdown-container {
                 gap: 15px;
-                margin: 1% auto 2% auto;
+                margin: -15px auto 2% auto;
             }
 
             .countdown-number {
