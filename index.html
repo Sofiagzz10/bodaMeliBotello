@@ -44,6 +44,11 @@
             position: relative;
         }
 
+        .panel:nth-child(3) {
+            justify-content: flex-start;
+            padding-top: 0;
+        }
+
         .panel:nth-child(1) {
             justify-content: center;
             align-items: center;
@@ -247,7 +252,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             height: 80vh;
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .location-content {
@@ -299,7 +304,7 @@
             }
 
         .location-title {
-            font-size: 2.5rem;
+            font-size: 4.2rem;
             text-align: center;
             margin: 0 0 40px 0;
             color: #000;
@@ -424,22 +429,22 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            width: 20px;
+            width: 80px;
             height: 2px;
-            background: repeating-linear-gradient(to right, #333 0, #333 2px, transparent 2px, transparent 4px);
+            background: #333;
             transform: translateX(-50%) translateY(-50%);
         }
 
         .timeline-item:nth-child(odd)::before {
-            right: -10px;
+            right: -40px;
             left: auto;
-            background: repeating-linear-gradient(to left, #333 0, #333 2px, transparent 2px, transparent 4px);
+            width: 80px;
         }
 
         .timeline-item:nth-child(even)::before {
-            left: -10px;
+            left: -40px;
             right: auto;
-            background: repeating-linear-gradient(to right, #333 0, #333 2px, transparent 2px, transparent 4px);
+            width: 80px;
         }
 
         .timeline-content {
@@ -598,7 +603,7 @@
             }
 
             .countdown-container {
-                margin: -10px auto 4% auto;
+                margin: 0 auto 4% auto;
             }
 
             .location-container {
@@ -629,7 +634,7 @@
 
             .countdown-container {
                 gap: 15px;
-                margin: -15px auto 2% auto;
+                margin: 0 auto 2% auto;
             }
 
             .countdown-number {
