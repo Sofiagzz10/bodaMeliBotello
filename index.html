@@ -424,7 +424,7 @@
 
         /* Línea punteada horizontal con puntos */
         .timeline-content::before {
-            content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+            content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
             position: absolute;
             top: 50%;
             font-size: 0.8rem;
@@ -435,6 +435,42 @@
             white-space: nowrap;
             overflow: hidden;
             width: 12rem;
+        }
+
+        /* Líneas responsivas para diferentes tamaños de pantalla */
+        @media (max-width: 1200px) {
+            .timeline-content::before {
+                width: 10rem;
+                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+            }
+        }
+
+        @media (max-width: 992px) {
+            .timeline-content::before {
+                width: 8rem;
+                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-content::before {
+                width: 6rem;
+                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline-content::before {
+                width: 4rem;
+                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+            }
+        }
+
+        @media (max-width: 360px) {
+            .timeline-content::before {
+                width: 3rem;
+                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+            }
         }
 
         /* Eventos a la derecha (elementos impares) - línea desde el centro hacia la derecha */
@@ -771,6 +807,7 @@
                 right: auto !important;
                 text-align: right !important;
                 width: 3rem !important;
+                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
             }
 
             .time {
