@@ -274,17 +274,17 @@
         .location-photo {
             background-image: url(img/4.jpg);
             background-size: cover;
-            background-position: center top !important;
             background-repeat: no-repeat;
             width: 100%;
             height: 100%;
+            background-position: 70% 30%; 
             align-self: flex-start;
         }
 
         .location-details {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 5%;
             margin: 20px 0;
         }
 
@@ -293,25 +293,16 @@
             text-align: center;
         }
 
-            .ceremony-location h3,
-            .reception-location h3 {
-                font-size: 1.5rem;
-                font-weight: 300;
-                letter-spacing: 0.2em;
-                color: #000;
-                margin-bottom: 15px;
-                font-family: 'Playfair Display', serif;
+        .ceremony-location h3,    /* TITULOS CEREMONIA RELIGIOSA Y RECEPCIÓN */
+        .reception-location h3 {
+             font-size: 2.3rem;
+               font-weight: 300;
+               letter-spacing: 0.2em;
+              color: #000;
+              margin-bottom: 15px;
+             font-family: 'Playfair Display', serif;
             }
-
-        .location-title {
-            font-size: 4.2rem;
-            text-align: center;
-            margin: 0 0 40px 0;
-            color: #000;
-            letter-spacing: 0.1em;
-            font-family: 'Playfair Display', serif;
-            width: 100%;
-        }
+       
 
         .couple-names {
             font-size: 4rem;
@@ -322,7 +313,7 @@
             font-family: 'Playfair Display', serif;
         }
 
-        .title {
+        .title, .location-title {
             font-size: 4.2rem;
             text-align: center;
             margin: 5% 0%;
@@ -354,7 +345,7 @@
             letter-spacing: 3px;
         }
 
-        .calendar-link {
+        .calendar-link, .boton-ad {
             display: inline-block;
             background: #fff;
             color: #000;
@@ -362,13 +353,13 @@
             text-decoration: none;
             border: 1px solid #000;
             font-family: 'Arial', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
             transition: all 0.3s ease;
             margin: 10px 0;
         }
 
-        .calendar-link:hover {
+        .calendar-link:hover, .boton-ad:hover {
             background: #000;
             color: #fff;
         }
@@ -379,13 +370,29 @@
             border-radius: 10px;
             margin: 20px 0;
         }
+        
 
         .address {
-            font-size: 1.1rem;
             color: #333;
             text-align: center;
-            line-height: 1.5;
+            line-height: 1.6;
             font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            letter-spacing: 3px;
+            margin: 0 auto 8% auto;
+            width: 65%;
+        }
+        .address h2{   /*TÍTULOS DE NOMBRES DE EVENTOS : FATIMA Y ZANQ*/
+            font-size: 1.5rem;
+            margin-top: 2%;
+        }
+
+        .address p{   /*TÍTULOS DE las direcciones*/
+            font-size: 1rem;
         }
 
         .timeline {
@@ -596,7 +603,7 @@
                 margin: 5% 0%;
             }
 
-            .title {
+            .title, .location-title {
                 font-size: 1.5rem;
             }
 
@@ -613,15 +620,18 @@
                 font-size: 0.9rem;
             }
 
-            .title {
+            .title,.location-title {
                 font-size: 1.3rem;
+            }
+            .location-image{
+                background-position: center top;
             }
 
             .date {
                 font-size: 1.6rem;
             }
 
-            .intro-text {
+            .intro-text,.address h2 {
                 width: 90%;
                 margin: 0%  2%;
             }
@@ -671,6 +681,20 @@
             .location-container {
                 margin-top: 40px;
             }
+            .address{
+                margin:0 0 0 0;
+                width: 100%;
+            }
+            .boton-ad{
+                font-size: 0.6rem;
+            }
+            .address h2{
+                font-size: 0.8rem;
+                margin-top: 5%;
+            }
+            .address p{
+                font-size: 0.6rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -687,13 +711,21 @@
                 margin: 8% 0%;
             }
 
-            .intro-text {
+            .intro-text{
                 font-size: 0.9rem;
                 line-height: 1.4;
                 width: 90%;
                 margin: 0 auto 15% auto;
             }
-
+            .address h2{
+                font-size: 0.7rem;
+            }
+            .address p{
+                font-size: 0.5rem;
+            }
+            .boton-ad{
+                font-size: 0.5rem;
+            }
             .countdown-container {
                 gap: 15px;
                 margin: 0 auto 2% auto;
@@ -738,7 +770,7 @@
                 padding: 0;
             }
 
-            .title {
+            .title,.location-title {
                 font-size: 1.3rem;
             }
 
@@ -759,7 +791,7 @@
                 margin: 0;
             }
 
-            .title {
+            .title, .location-title {
                 font-size: 2.5rem;
                 margin: 10px 0;
             }
@@ -887,24 +919,24 @@
                         <div class="countdown-label">SEGUNDOS</div>
                     </div>
                 </div>
-                <div class="location-title">LOCATION</div>
+                <div class="location-title">UBICACIÓN</div>
                 <div class="location-container">
                     <div class="location-content">
                         <div class="location-details">
                             <div class="ceremony-location">
-                                <h3>CEREMONIA</h3>
+                                <h3>CEREMONIA RELIGIOSA</h3>
                                 <div class="address">
-                                    <strong>Iglesia Ortodoxa de San Miguel<br>
-                                    Calle Lermontov, 15<br>
-                                    Ciudad de Pyatigorsk</strong>
+                                    <h2>SANTUARIO DE NUESTRA SEÑORA DE FÁTIMA</h2>
+                                    <p>Río Tiber s/n Col. del Valle San Pedro Garza García Nuevo León, México C.P. 66220 </p>
+                                    <a href = "https://www.google.com/maps/place/Parroquia+y+Santuario+de+Nuestra+Se%C3%B1ora+de+F%C3%A1tima/@25.6500415,-100.3747532,17z/data=!3m1!4b1!4m6!3m5!1s0x866297c2a9555555:0x1926888214c98f1d!8m2!3d25.6500367!4d-100.3721783!16s%2Fg%2F1tn066nj?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"><button class="boton-ad">Ir al mapa</button></a> 
                                 </div>
                             </div>
                             <div class="reception-location">
                                 <h3>RECEPCIÓN</h3>
                                 <div class="address">
-                                    <strong>Restaurante "Krysha"<br>
-                                    Avenida Kirova, 65<br>
-                                    Ciudad de Pyatigorsk</strong>
+                                    <h2>ZANQ</h2>
+                                    <p>David Alfaro Siqueiros 104, Zona Valle Oriente, 66269 San Pedro Garza García, N.L. </p>
+                                    <a href ="https://www.google.com/maps/place/Zanq+by+Cinco+Catering/@25.6427296,-100.3248503,17z/data=!3m2!4b1!5s0x8662be43838b50ff:0xb84183fa1019db8a!4m6!3m5!1s0x8662be437db4d2e5:0x367e40be4a5b340f!8m2!3d25.6427248!4d-100.3222754!16s%2Fg%2F11c5s6_4c3?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D", target="button"><button class="boton-ad">Ir al mapa</button></a>
                                 </div>
                             </div>
                         </div>
@@ -919,7 +951,7 @@
         <!-- Sección 4: Cronograma -->
         <div class="panel">
             <div class="section">
-                <div class="large-photo">💒 Ceremonia</div>
+                <div class="large-photo"></div>
                 <div class="title" style="text-align: center; width: 100%; margin: 0 auto 2rem auto;">TIMING OF THE DAY</div>
                 <div class="timeline">
                     <div class="timeline-item">
