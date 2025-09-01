@@ -47,6 +47,13 @@
         .panel:nth-child(3) {
             justify-content: flex-start;
             padding-top: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .panel:nth-child(3) {
+            justify-content: flex-start;
+            padding-top: 0;
         }
 
         .panel:nth-child(1) {
@@ -321,6 +328,11 @@
             letter-spacing: 0.1em;
             font-family: 'Playfair Display', serif;
             width: 80%;
+        }
+
+        .location-title {
+            width: 100%;
+            margin: 0 auto;
         }
 
         .date {
@@ -609,6 +621,10 @@
                 font-size: 1.5rem;
             }
 
+            .location-title{
+                margin-top: 20% !important;
+            }
+
             .date {
                 font-size: 1.8rem;
             }
@@ -620,10 +636,6 @@
 
             .save-date-content {
                 font-size: 0.9rem;
-            }
-
-            .title,.location-title {
-                font-size: 1.3rem;
             }
             .location-image{
                 background-position: center top;
@@ -747,9 +759,13 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
                 height: auto;
-                margin: 0 20px;
+                margin: 5px 5px;
                 padding: 0;
                 margin-top: 30px;
+            }
+
+            .location-title {
+                margin-top: 0%;
             }
 
             .location-details {
