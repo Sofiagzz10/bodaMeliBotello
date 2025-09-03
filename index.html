@@ -422,7 +422,7 @@
         .timeline {
             position: relative;
             padding: 20px 0;
-            margin: 40px 0;
+            margin: 80px 0 40px 0;
         }
 
         /* Línea central vertical */
@@ -568,30 +568,44 @@
              margin-bottom: 1rem;
          }
         .event {
-            font-size: 18px;
+            font-size: 1.5rem;
             color: #5a5a5a;
             line-height: 1.3;
-            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            font-family: 'Arial', sans-serif;
+        }
+        .event2 {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-family: 'Arial', sans-serif;
+            margin-top: 0.5rem;
         }
 
         .event-icon {
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 12rem;
+            height: 12rem;
             margin: 0 auto 1.5rem auto;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: #f8f8f8;
-            border: 2px solid #333;
+        }
+
+        /* Eventos impares (derecha) - margin-right para acercar a la línea */
+        .timeline-item:nth-child(odd) .event-icon {
+            margin-right: 1.5rem;
+            margin-left: 0;
+        }
+
+        /* Eventos pares (izquierda) - margin-left para acercar a la línea */
+        .timeline-item:nth-child(even) .event-icon {
+            margin-left: 22rem;
         }
 
         .event-icon img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
+            object-fit: contain;
         }
 
         .color-palette {
@@ -727,15 +741,42 @@
             }
 
             .timeline-item {
-                flex-direction: column;
-                align-items: center;
-                gap: 5px;
-                text-align: center;
+                margin: 1rem 0;
             }
 
-            .event {
-                text-align: center;
+            .timeline-content {
+                width: 35%;
+                padding: 1rem;
+            }
+
+            .timeline-content::before {
+                width: 8rem;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: calc(50% + 8rem);
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: calc(50% - 35% - 8rem);
+            }
+
+            .event-icon {
+                width: 4rem;
+                height: 4rem;
+                margin: 0 auto 1.2rem auto;
+            }
+
+            /* Eventos impares (derecha) - margin-right para acercar a la línea */
+            .timeline-item:nth-child(odd) .event-icon {
+                margin-right: 1rem;
                 margin-left: 0;
+            }
+
+            /* Eventos pares (izquierda) - margin-right para centrar */
+            .timeline-item:nth-child(even) .event-icon {
+                margin-left: 0;
+                margin-right: 1rem;
             }
 
             .color-palette {
@@ -913,30 +954,51 @@
                 background-position: 60% 40%;
             }
 
-            .timeline::before {
-                left: 2rem;
+            .timeline-item {
+                margin: 0.8rem 0;
             }
 
             .timeline-content {
-                width: calc(100% - 5rem);
-                margin-left: 5rem !important;
-                text-align: left !important;
+                width: 30%;
+                padding: 0.8rem;
             }
 
             .timeline-content::before {
-                left: -4rem !important;
-                right: auto !important;
-                text-align: right !important;
-                width: 3rem !important;
-                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+                width: 6rem;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: calc(50% + 6rem);
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: calc(50% - 30% - 6rem);
+            }
+
+            .event-icon {
+                width: 3rem;
+                height: 3rem;
+                margin: 0 auto 1rem auto;
+            }
+
+            /* Eventos impares (derecha) - margin-right para acercar a la línea */
+            .timeline-item:nth-child(odd) .event-icon {
+                margin-right: 0.8rem;
+                margin-left: 0;
+            }
+
+            /* Eventos pares (izquierda) - margin-right para centrar */
+            .timeline-item:nth-child(even) .event-icon {
+                margin-left: 0;
+                margin-right: 0.8rem;
             }
 
             .time {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .event {
-                font-size: 16px;
+                font-size: 14px;
             }
             #nompa, #nomma{
                 font-size: 0.7rem;
@@ -1052,33 +1114,36 @@
         <div class="panel">
             <div class="section">
                 <div class="large-photo"></div>
-                <div class="title" style="text-align: center; width: 100%; margin: 0 auto 2rem auto;">ITINERARIO</div>
+                <div class="title" style="text-align: center; width: 100%; margin: 5rem auto 0 auto;">ITINERARIO</div>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <div class="event-icon">
-                                <img src="img/6.jpg" alt="Encuentro">
+                                <img src="img/Iglesia.png" alt="Encuentro">
                             </div>
-                            <div class="time">16:30</div>
-                            <div class="event">Llegada y acomodación<br>de invitados</div>
+                            <div class="time">17:30</div>
+                            <div class="event">Ceremonia<br>Religiosa</div>
+                            <div class="event2">Santuario de <br> Nuestra Señora de <br> Fátima</div>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <div class="event-icon">
-                                <img src="img/3.jpg" alt="Ceremonia">
+                                <img src="img/coctail.png" alt="Ceremonia">
                             </div>
-                            <div class="time">17:00</div>
-                            <div class="event">Ceremonia<br>nupcial</div>
+                            <div class="time">19:00</div>
+                            <div class="event">Cocktail de<br>Bienvenida</div>
+                            <div class="event2">Zanq</div>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <div class="event-icon">
-                                <img src="img/2.jpg" alt="Banquete">
+                                <img src="img/venue.png" alt="Banquete">
                             </div>
-                            <div class="time">18:00</div>
-                            <div class="event">Inicio del<br>banquete</div>
+                            <div class="time">20:00</div>
+                            <div class="event">Recepción</div>
+                            <div class="event2">Zanq</div>
                         </div>
                     </div>
                 </div>
