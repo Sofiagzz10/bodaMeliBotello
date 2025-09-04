@@ -455,7 +455,7 @@
 
         /* Línea punteada horizontal con puntos */
         .timeline-content::before {
-            content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+            content: '•••••••••••••••••••••••••';
             position: absolute;
             top: 50%;
             font-size: 0.8rem;
@@ -465,42 +465,52 @@
             transform: translateY(-50%);
             white-space: nowrap;
             overflow: hidden;
-            width: 12rem;
+            width: 10rem;
         }
 
         /* Líneas responsivas para diferentes tamaños de pantalla */
         @media (max-width: 1200px) {
             .timeline-content::before {
-                width: 10rem;
-                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+                width: 9rem;
+                content: '•••••••••••••••••••••••';
             }
         }
 
         @media (max-width: 992px) {
             .timeline-content::before {
-                width: 8rem;
-                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+                width: 7rem;
+                content: '•••••••••••••••••••••••';
             }
         }
 
         @media (max-width: 768px) {
             .timeline-content::before {
-                width: 6rem;
-                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+                width: 5rem;
+                content: '•••••••••••••••••••••••;
             }
         }
 
         @media (max-width: 480px) {
             .timeline-content::before {
-                width: 4rem;
-                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+                width: 2rem;
+                content: '••••••••';
             }
+            .timeline-content{
+                padding: 0 0 0 0 !important;
+            }
+            .timeline-item:nth-child(even){
+                margin-left: 3rem;
+            }
+            .timeline-item:nth-child(odd){
+                margin-right: 3rem;
+            }
+
         }
 
         @media (max-width: 360px) {
             .timeline-content::before {
-                width: 3rem;
-                content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+                width: 0.2rem;
+                content: '•••••••';
             }
         }
 
@@ -568,14 +578,14 @@
              margin-bottom: 1rem;
          }
         .event {
-            font-size: 1.5rem;
+            font-size: 1rem;
             color: #5a5a5a;
             line-height: 1.3;
             letter-spacing: 2px;
             font-family: 'Arial', sans-serif;
         }
         .event2 {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             font-family: 'Arial', sans-serif;
             margin-top: 0.5rem;
@@ -762,9 +772,15 @@
             }
 
             .event-icon {
-                width: 4rem;
-                height: 4rem;
+                width: 6rem;
+                height: 6rem;
                 margin: 0 auto 1.2rem auto;
+            }
+            
+            .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 40px 0 40px 0;
             }
 
             /* Eventos impares (derecha) - margin-right para acercar a la línea */
@@ -817,6 +833,9 @@
                 #nompa{
                     margin-top: -8%;
                     font-size: 1.2rem;
+                }
+                .title{
+                    margin: 3rem auto 0 auto !important;
                 }
         }
 
@@ -976,8 +995,8 @@
             }
 
             .event-icon {
-                width: 3rem;
-                height: 3rem;
+                width: 6rem;
+                height: 6rem;
                 margin: 0 auto 1rem auto;
             }
 
@@ -997,9 +1016,6 @@
                 font-size: 18px;
             }
 
-            .event {
-                font-size: 14px;
-            }
             #nompa, #nomma{
                 font-size: 0.7rem;
             }
@@ -1123,7 +1139,7 @@
                             </div>
                             <div class="time">17:30</div>
                             <div class="event">Ceremonia<br>Religiosa</div>
-                            <div class="event2">Santuario de <br> Nuestra Señora de <br> Fátima</div>
+                            <div class="event2">Santuario de Nuestra Señora de Fátima</div>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -1132,7 +1148,7 @@
                                 <img src="img/coctail.png" alt="Ceremonia">
                             </div>
                             <div class="time">19:00</div>
-                            <div class="event">Cocktail de<br>Bienvenida</div>
+                            <div class="event">Cocktail de Bienvenida</div>
                             <div class="event2">Zanq</div>
                         </div>
                     </div>
