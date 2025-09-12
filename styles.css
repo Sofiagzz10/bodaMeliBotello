@@ -1164,15 +1164,15 @@ body {
         padding: 0.25rem 0.65rem;
     }
     .countdown-container {
-        gap: 15px;
+        gap: 10px;
     }
 
     .countdown-number {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .countdown-label {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .location-container {
