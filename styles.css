@@ -1234,6 +1234,10 @@ body {
         .details-column {
             margin-bottom: 40px; /* Espacio entre las secciones en móvil */
         }
+        .countdown-item{
+            padding: 0 10px;
+        }
+        
 }
 
 @media (max-width: 480px) {
@@ -1246,6 +1250,7 @@ body {
 
     .panel:nth-child(2) {
         padding-top: 0%;
+        margin-top: -5%;
     }
 
     .name {
@@ -1295,15 +1300,27 @@ body {
     }
 
     .ceremony-location h3, .reception-location h3 {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .event {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .large-photo {
-        height: 40vh;
+        height: 30vh;
+    }
+
+    .dress-code-header {
+        font-size: 1rem;
+    }
+
+    .dress-code-h2 {
+        font-size: 0.9rem;
+    }
+
+    .dress-code-text, .gift-text {
+        font-size: 0.8rem;
     }
 
     /* Ajustes del carrusel en móvil */
@@ -1323,6 +1340,8 @@ body {
         margin: 5px 5px;
         padding: 0;
         margin-top: 10px;
+        align-items: start;
+        min-height: 40vh;
     }
 
     .location-title {
@@ -1480,6 +1499,7 @@ body {
     .number-input{
         width: 60%;     
        }
+      
 }
 @media (max-width: 450px){
     #sec4{
