@@ -91,7 +91,7 @@
             items.forEach((item, index) => {
                 setTimeout(() => {
                     item.classList.add('animate-in');
-                }, 500 + (index * 200)); // 500ms base + 200ms por cada imagen
+                }, 800 + (index * 300)); // 800ms base + 300ms por cada imagen
             });
         }
 
