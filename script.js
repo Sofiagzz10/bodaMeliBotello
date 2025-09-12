@@ -98,7 +98,7 @@
             const activeItem = document.querySelector('.carousel-item.active');
             const nextItem = document.querySelector('.carousel-item.next');
 
-            // Animar transición
+            // Animar ambas transiciones simultáneamente
             prevItem.classList.add('slide-left');
             activeItem.classList.add('slide-right');
 

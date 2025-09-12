@@ -150,7 +150,7 @@ body {
 .carousel-container {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 400px;
     margin: 40px 0;
     display: flex;
     align-items: center;
@@ -169,8 +169,8 @@ body {
 
 .carousel-item {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -210,10 +210,12 @@ body {
 
 @keyframes slideLeft {
     0% {
-        transform: scale(0.8) translateX(50px);
+        left: 10%;
+        transform: scale(0.8) translateX(-50px);
         opacity: 0.6;
     }
     100% {
+        left: 50%;
         transform: scale(1) translateX(-50%);
         opacity: 1;
     }
@@ -221,11 +223,13 @@ body {
 
 @keyframes slideRight {
     0% {
+        left: 50%;
         transform: scale(1) translateX(-50%);
         opacity: 1;
     }
     100% {
-        transform: scale(0.8) translateX(-50px);
+        right: 10%;
+        transform: scale(0.8) translateX(50px);
         opacity: 0.6;
     }
 }
@@ -1318,12 +1322,12 @@ body {
     }
 
     .carousel-container {
-        height: 250px;
+        height: 300px;
     }
 
     .carousel-item {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
     }
 
     .carousel-item.prev {
