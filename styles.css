@@ -133,13 +133,78 @@ body {
         animation-delay: 1.5s;
         opacity: 0;
     }
-    .photos-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
-        margin: 40px 0;
-        align-items: center;
-    }
+.photos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+    align-items: center;
+}
+
+/* Carrusel styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item {
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carousel-item:nth-child(1) {
+    background-image: url(img/2.jpg);
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.carousel-item:nth-child(2) {
+    background-image: url(img/3.jpg);
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.carousel-item:nth-child(3) {
+    background-image: url(img/6.jpg);
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+.carousel-item:nth-child(4) {
+    background-image: url(img/1.jpg);
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 2s;
+}
+
+.carousel-item:nth-child(5) {
+    background-image: url(img/4.jpg);
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 2.5s;
+}
+
+.carousel-item:nth-child(6) {
+    background-image: url(img/5.jpg);
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 3s;
+}
+
+.carousel-item:nth-child(7) {
+    background-image: url(img/7.jpg);
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 3.5s;
+}
+
+.carousel-item:nth-child(8) {
+    background-image: url(img/8.jpg);
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 4s;
+}
     .photo-placeholder {
         display: flex;
         align-items: center;
@@ -356,8 +421,10 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        height: 80vh;
+        height: auto;
+        min-height: 70vh;
         margin-top: 40px;
+        padding: 20px 0;
     }
     .location-content {
         display: flex;
@@ -615,6 +682,34 @@ body {
 #boton2:hover{
     background-color: rgba(125,96,68,0.3);
     color: rgb(125, 96, 68,1);
+}
+
+#editResponse{
+    margin: 1rem auto;
+    align-self: center;
+    background-color: rgba(125, 96, 68, 0.1);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(125, 96, 68, 0.6);
+    cursor: pointer;
+    border: 2px solid rgba(125, 96, 68, 0.3);
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#editResponse:hover{
+    background-color: rgba(125,96,68,0.2);
+    color: rgb(125, 96, 68,0.8);
+    border-color: rgba(125, 96, 68, 0.5);
 }
 
 
@@ -1162,15 +1257,40 @@ body {
         padding: 0.25rem 0.65rem;
     }
     .countdown-container {
-        gap: 10px;
+        gap: 8px;
     }
 
     .countdown-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .countdown-label {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+    }
+
+    /* Ajustes de tamaño de letra en móvil */
+    .dress-code-header {
+        font-size: 1.2rem;
+    }
+
+    .dress-code-h2 {
+        font-size: 1.1rem;
+    }
+
+    .dress-code-text, .gift-text {
+        font-size: 0.9rem;
+    }
+
+    .ceremony-location h3, .reception-location h3 {
+        font-size: 1rem;
+    }
+
+    .event {
+        font-size: 0.9rem;
+    }
+
+    .large-photo {
+        height: 40vh;
     }
 
     .location-container {
@@ -1358,4 +1478,49 @@ body {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Animaciones de scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-out;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
 }

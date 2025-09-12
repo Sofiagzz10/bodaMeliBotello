@@ -59,10 +59,77 @@
             setInterval(updateCountdown, 1000);
             updateCountdown(); // Ejecutar inmediatamente
     
-            // Animación de carga inicial (simplificada)
-            window.addEventListener('load', () => {
-                // Carga simple sin efectos adicionales
+        // Animación de carga inicial (simplificada)
+        window.addEventListener('load', () => {
+            // Carga simple sin efectos adicionales
+        });
+
+        // Carrusel de imágenes
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel-item');
+        const totalImages = images.length;
+
+        function rotateImages() {
+            // Ocultar imagen actual
+            images[currentImageIndex].classList.remove('active');
+            
+            // Mover a la siguiente imagen
+            currentImageIndex = (currentImageIndex + 1) % totalImages;
+            
+            // Mostrar nueva imagen
+            images[currentImageIndex].classList.add('active');
+        }
+
+        // Iniciar carrusel después de 3 segundos
+        setTimeout(() => {
+            setInterval(rotateImages, 3000); // Cambiar cada 3 segundos
+        }, 3000);
+
+        // Animaciones de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
+        }, observerOptions);
+
+        // Observar elementos con animaciones
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Función para editar respuesta
+        function editResponse() {
+            // Resetear variables de confirmación
+            if (typeof confirmacion !== 'undefined') {
+                confirmacion = 'no ha confirmado';
+            }
+            if (typeof invitadosConfirmados !== 'undefined') {
+                invitadosConfirmados = '';
+            }
+            
+            // Mostrar formulario de nuevo
+            document.getElementById('asis').style.display = 'block';
+            document.querySelector('.yes-no-input').style.display = 'flex';
+            document.getElementById('conf').style.display = 'block';
+            document.querySelector('.number-input').style.display = 'flex';
+            document.getElementById('boton2').style.display = 'block';
+            document.getElementById('editResponse').style.display = 'none';
+            
+            // Resetear valores
+            document.getElementById('choice').value = 'no';
+            document.getElementById('quantity').value = '0';
+            document.querySelectorAll('.option').forEach(btn => btn.classList.remove('active'));
+        }
     
             //función del back
             function mostrarParrafoyaConf() {
@@ -229,6 +296,9 @@
                 console.log('Respuesta actualizada:', result);
                 alert('Tu respuesta ha sido enviada. ¡Gracias!');
                 mostrarParrafoyaConf();
+                
+                // Mostrar botón de editar respuesta
+                document.getElementById('editResponse').style.display = 'block';
             } catch (error) {
                 console.error('Error detallado al actualizar la respuesta:', error);
                 alert(`Hubo un error al enviar tu respuesta: ${error.message}. Por favor, intenta de nuevo.`);

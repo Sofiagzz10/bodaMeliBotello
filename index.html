@@ -22,10 +22,15 @@
             <div class="section">
                 <div class="names">
                     <div class="name">MELISSA</div>
-                    <div class="photos-grid">
-                        <div class="photo-placeholder"></div>
-                        <div class="photo-placeholder"></div>
-                        <div class="photo-placeholder"></div>
+                    <div class="photos-grid carousel-container">
+                        <div class="photo-placeholder carousel-item active" data-bg="img/2.jpg"></div>
+                        <div class="photo-placeholder carousel-item" data-bg="img/3.jpg"></div>
+                        <div class="photo-placeholder carousel-item" data-bg="img/6.jpg"></div>
+                        <div class="photo-placeholder carousel-item" data-bg="img/1.jpg"></div>
+                        <div class="photo-placeholder carousel-item" data-bg="img/4.jpg"></div>
+                        <div class="photo-placeholder carousel-item" data-bg="img/5.jpg"></div>
+                        <div class="photo-placeholder carousel-item" data-bg="img/7.jpg"></div>
+                        <div class="photo-placeholder carousel-item" data-bg="img/8.jpg"></div>
                     </div>
                     <div class="name">JOEL</div>
                 </div>
@@ -35,7 +40,7 @@
         <!-- Sección 2: Save the Date -->
         <div class="panel">
             <div class="section">
-                <div class="intro-text">
+                <div class="intro-text fade-in">
                     <div id="div1">
                         NOS COMPLACE INVITARTE A COMPARTIR CON NOSOTROS EL COMIENZO DE NUESTRA VIDA JUNTOS CON LA BENDICIÓN DE DIOS Y NUESTROS PADRES
                     </div>
@@ -52,16 +57,16 @@
                     </div>
                     <div class="save-date-content">
                         <div class="title">SAVE THE <br> DATE</div>
-                            <div class="date">25.10.2025</div>
-                                <div class="description">
-                                    <a href="#" class="calendar-link" onclick="addToCalendar()">AGREGAR AL CALENDARIO</a>
+                        <div class="date">25.10.2025</div>
+                        <div class="description">
+                            <a href="#" class="calendar-link" onclick="addToCalendar()">AGREGAR AL CALENDARIO</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                    </div>
+    </div>
 
         <!-- Sección 3: Ubicación -->
         <div class="panel">
@@ -141,6 +146,7 @@
                             <button id="increment">+</button>
                         </div>
                         <button id="boton2" onclick="submitResponse()" style = "display: none;">Enviar Respuesta</button>
+                        <button id="editResponse" onclick="editResponse()" style = "display: none;">Editar Respuesta</button>
                     </div>
                 </div>
             </div>
@@ -176,11 +182,11 @@
                         <div class="timeline-content">
                             <div class="event-icon">
                                 <img src="img/venue.png" alt="Banquete">
-                            </div>
+                    </div>
                             <div class="time">20:00</div>
                             <div class="event">Recepción</div>
                             <div class="event2">Zanq</div>
-                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
