@@ -86,6 +86,13 @@
                     item.classList.add('right');
                 }
             });
+            
+            // Animar la aparición de las imágenes con delay escalonado
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('animate-in');
+                }, 500 + (index * 200)); // 500ms base + 200ms por cada imagen
+            });
         }
 
         function rotateCarousel() {
@@ -94,25 +101,59 @@
 
             const items = document.querySelectorAll('.carousel-item');
             
-            // Obtener las imágenes actuales
-            const currentImages = [];
-            items.forEach(item => {
-                currentImages.push(item.style.backgroundImage);
-            });
-            
-            // Rotar las imágenes: [0,1,2] -> [2,0,1]
-            const newImages = [
-                currentImages[2], // La imagen de la derecha va a la izquierda
-                currentImages[0], // La imagen de la izquierda va al centro
-                currentImages[1]  // La imagen del centro va a la derecha
-            ];
-            
-            // Aplicar las nuevas posiciones de imágenes
+            // Fase 1: Deslizar las imágenes hacia afuera
             items.forEach((item, index) => {
-                item.style.backgroundImage = newImages[index];
+                if (index === 0) { // Izquierda se desliza hacia la izquierda
+                    item.classList.add('slide-left');
+                } else if (index === 1) { // Centro se desliza hacia la derecha
+                    item.classList.add('slide-right');
+                } else if (index === 2) { // Derecha se desliza hacia la derecha
+                    item.classList.add('slide-right');
+                }
             });
-
-            isAnimating = false;
+            
+            setTimeout(() => {
+                // Obtener las imágenes actuales
+                const currentImages = [];
+                items.forEach(item => {
+                    currentImages.push(item.style.backgroundImage);
+                });
+                
+                // Rotar las imágenes: [0,1,2] -> [2,0,1]
+                const newImages = [
+                    currentImages[2], // La imagen de la derecha va a la izquierda
+                    currentImages[0], // La imagen de la izquierda va al centro
+                    currentImages[1]  // La imagen del centro va a la derecha
+                ];
+                
+                // Aplicar las nuevas posiciones de imágenes
+                items.forEach((item, index) => {
+                    item.style.backgroundImage = newImages[index];
+                });
+                
+                // Fase 2: Deslizar las imágenes hacia sus nuevas posiciones
+                setTimeout(() => {
+                    items.forEach((item, index) => {
+                        item.classList.remove('slide-left', 'slide-right');
+                        item.classList.add('slide-center');
+                    });
+                    
+                    // Agregar animación de aparición con un pequeño delay
+                    setTimeout(() => {
+                        items.forEach(item => {
+                            item.classList.add('animate-in');
+                        });
+                    }, 50);
+                    
+                    // Limpiar clases después de la animación
+                    setTimeout(() => {
+                        items.forEach(item => {
+                            item.classList.remove('slide-center');
+                        });
+                        isAnimating = false;
+                    }, 1200);
+                }, 100);
+            }, 600);
         }
 
         // Inicializar carrusel
@@ -121,7 +162,7 @@
             
             // Iniciar rotación automática después de 3 segundos
             setTimeout(() => {
-                setInterval(rotateCarousel, 3000);
+                setInterval(rotateCarousel, 5000);
             }, 3000);
         });
 

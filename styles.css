@@ -158,9 +158,45 @@ body {
 }
 
 .carousel-item {
-    transition: all 0.8s ease-in-out;
+    transition: all 1.2s ease-in-out;
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+}
+
+.carousel-item.animate-in {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.carousel-item.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.carousel-item.fade-in {
     opacity: 1;
     transform: scale(1);
+}
+
+.carousel-item.slide-left {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.carousel-item.slide-right {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.carousel-item.slide-center {
+    transform: translateX(0);
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+}
+
+.carousel-item.slide-center.animate-in {
+    opacity: 1;
+    transform: scale(1) translateY(0);
 }
 
 .carousel-item.left {
