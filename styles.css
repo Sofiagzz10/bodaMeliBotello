@@ -784,7 +784,7 @@ body {
 .details-header-image {
     width: 100vw; /* Ocupa el 100% del ancho de la ventana */
     height: 50vh; /* Ocupa el 50% de la altura de la ventana, ajústalo a tu gusto */
-    background-image: url("img/9.jpg"); /* <-- CAMBIA ESTA URL POR TU IMAGEN */
+    background-image: url(img/9.jpg); /* <-- CAMBIA ESTA URL POR TU IMAGEN */
     background-size: cover;
     background-position: 80% 20%;
     position: relative; /* Necesario para posicionar el título dentro */
