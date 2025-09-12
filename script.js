@@ -94,35 +94,23 @@
 
             const items = document.querySelectorAll('.carousel-item');
             
-            // Rotación circular: left -> center, center -> right, right -> left
+            // Obtener las imágenes actuales
+            const currentImages = [];
             items.forEach(item => {
-                if (item.classList.contains('left')) {
-                    item.classList.remove('left');
-                    item.classList.add('center');
-                } else if (item.classList.contains('center')) {
-                    item.classList.remove('center');
-                    item.classList.add('right');
-                } else if (item.classList.contains('right')) {
-                    item.classList.remove('right');
-                    item.classList.add('left');
-                }
+                currentImages.push(item.style.backgroundImage);
             });
-
-            // Actualizar imágenes
-            const leftItem = document.querySelector('.left');
-            const centerItem = document.querySelector('.center');
-            const rightItem = document.querySelector('.right');
             
-            // Rotar el array de imágenes
-            const temp = imageArray[0];
-            imageArray[0] = imageArray[2];
-            imageArray[2] = imageArray[1];
-            imageArray[1] = temp;
+            // Rotar las imágenes: [0,1,2] -> [2,0,1]
+            const newImages = [
+                currentImages[2], // La imagen de la derecha va a la izquierda
+                currentImages[0], // La imagen de la izquierda va al centro
+                currentImages[1]  // La imagen del centro va a la derecha
+            ];
             
-            // Aplicar nuevas imágenes
-            leftItem.style.backgroundImage = `url('${imageArray[0]}')`;
-            centerItem.style.backgroundImage = `url('${imageArray[1]}')`;
-            rightItem.style.backgroundImage = `url('${imageArray[2]}')`;
+            // Aplicar las nuevas posiciones de imágenes
+            items.forEach((item, index) => {
+                item.style.backgroundImage = newImages[index];
+            });
 
             isAnimating = false;
         }
