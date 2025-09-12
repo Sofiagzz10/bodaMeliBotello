@@ -64,26 +64,80 @@
             // Carga simple sin efectos adicionales
         });
 
-        // Carrusel de imágenes
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll('.carousel-item');
-        const totalImages = images.length;
+        // Carrusel de imágenes infinito
+        const imageArray = [
+            'img/2.jpg',
+            'img/3.jpg', 
+            'img/6.jpg',
+            'img/1.jpg',
+            'img/4.jpg',
+            'img/5.jpg',
+            'img/7.jpg',
+            'img/8.jpg'
+        ];
+        
+        let currentIndex = 0;
+        let isAnimating = false;
 
-        function rotateImages() {
-            // Ocultar imagen actual
-            images[currentImageIndex].classList.remove('active');
+        function initCarousel() {
+            const prevItem = document.querySelector('.carousel-item.prev');
+            const activeItem = document.querySelector('.carousel-item.active');
+            const nextItem = document.querySelector('.carousel-item.next');
             
-            // Mover a la siguiente imagen
-            currentImageIndex = (currentImageIndex + 1) % totalImages;
-            
-            // Mostrar nueva imagen
-            images[currentImageIndex].classList.add('active');
+            // Establecer imágenes iniciales
+            prevItem.style.backgroundImage = `url('${imageArray[(currentIndex - 1 + imageArray.length) % imageArray.length]}')`;
+            activeItem.style.backgroundImage = `url('${imageArray[currentIndex]}')`;
+            nextItem.style.backgroundImage = `url('${imageArray[(currentIndex + 1) % imageArray.length]}')`;
         }
 
-        // Iniciar carrusel después de 3 segundos
-        setTimeout(() => {
-            setInterval(rotateImages, 3000); // Cambiar cada 3 segundos
-        }, 3000);
+        function rotateCarousel() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const prevItem = document.querySelector('.carousel-item.prev');
+            const activeItem = document.querySelector('.carousel-item.active');
+            const nextItem = document.querySelector('.carousel-item.next');
+
+            // Animar transición
+            prevItem.classList.add('slide-left');
+            activeItem.classList.add('slide-right');
+
+            // Actualizar índices
+            currentIndex = (currentIndex + 1) % imageArray.length;
+
+            setTimeout(() => {
+                // Remover clases de animación
+                prevItem.classList.remove('slide-left');
+                activeItem.classList.remove('slide-right');
+
+                // Reorganizar elementos
+                prevItem.classList.remove('prev');
+                activeItem.classList.remove('active');
+                nextItem.classList.remove('next');
+
+                // Asignar nuevas posiciones
+                activeItem.classList.add('prev');
+                nextItem.classList.add('active');
+                prevItem.classList.add('next');
+
+                // Actualizar imágenes
+                const newNextIndex = (currentIndex + 1) % imageArray.length;
+                prevItem.style.backgroundImage = `url('${imageArray[(currentIndex - 1 + imageArray.length) % imageArray.length]}')`;
+                nextItem.style.backgroundImage = `url('${imageArray[newNextIndex]}')`;
+
+                isAnimating = false;
+            }, 800);
+        }
+
+        // Inicializar carrusel
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousel();
+            
+            // Iniciar rotación automática después de 3 segundos
+            setTimeout(() => {
+                setInterval(rotateCarousel, 3000);
+            }, 3000);
+        });
 
         // Animaciones de scroll
         const observerOptions = {

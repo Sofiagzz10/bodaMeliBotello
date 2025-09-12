@@ -121,6 +121,11 @@ body {
     .names {
         text-align: center;
         margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
     .name { /*MELISSA / JOEL*/
         font-size: 3.5rem;
@@ -144,66 +149,85 @@ body {
 /* Carrusel styles */
 .carousel-container {
     position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .carousel-item {
-    transition: all 0.8s ease-in-out;
-    opacity: 0;
-    transform: translateX(100px);
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.6;
+    transform: scale(0.8);
+}
+
+.carousel-item.prev {
+    left: 10%;
+    transform: scale(0.8) translateX(-50px);
+    z-index: 1;
 }
 
 .carousel-item.active {
+    left: 50%;
+    transform: scale(1) translateX(-50%);
     opacity: 1;
-    transform: translateX(0);
+    z-index: 3;
 }
 
-.carousel-item:nth-child(1) {
-    background-image: url(img/2.jpg);
-    animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 0.5s;
+.carousel-item.next {
+    right: 10%;
+    transform: scale(0.8) translateX(50px);
+    z-index: 1;
 }
 
-.carousel-item:nth-child(2) {
-    background-image: url(img/3.jpg);
-    animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 1s;
+/* Animaciones del carrusel */
+.carousel-item.slide-left {
+    animation: slideLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.carousel-item:nth-child(3) {
-    background-image: url(img/6.jpg);
-    animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 1.5s;
+.carousel-item.slide-right {
+    animation: slideRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.carousel-item:nth-child(4) {
-    background-image: url(img/1.jpg);
-    animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 2s;
+@keyframes slideLeft {
+    0% {
+        transform: scale(0.8) translateX(50px);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1) translateX(-50%);
+        opacity: 1;
+    }
 }
 
-.carousel-item:nth-child(5) {
-    background-image: url(img/4.jpg);
-    animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 2.5s;
-}
-
-.carousel-item:nth-child(6) {
-    background-image: url(img/5.jpg);
-    animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 3s;
-}
-
-.carousel-item:nth-child(7) {
-    background-image: url(img/7.jpg);
-    animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 3.5s;
-}
-
-.carousel-item:nth-child(8) {
-    background-image: url(img/8.jpg);
-    animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 4s;
+@keyframes slideRight {
+    0% {
+        transform: scale(1) translateX(-50%);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8) translateX(-50px);
+        opacity: 0.6;
+    }
 }
     .photo-placeholder {
         display: flex;
@@ -1291,6 +1315,23 @@ body {
 
     .large-photo {
         height: 40vh;
+    }
+
+    .carousel-container {
+        height: 250px;
+    }
+
+    .carousel-item {
+        width: 150px;
+        height: 150px;
+    }
+
+    .carousel-item.prev {
+        left: 5%;
+    }
+
+    .carousel-item.next {
+        right: 5%;
     }
 
     .location-container {
