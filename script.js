@@ -64,69 +64,67 @@
             // Carga simple sin efectos adicionales
         });
 
-        // Carrusel de imágenes infinito
+        // Carrusel circular de imágenes
         const imageArray = [
             'img/2.jpg',
             'img/3.jpg', 
-            'img/6.jpg',
-            'img/1.jpg',
-            'img/4.jpg',
-            'img/5.jpg',
-            'img/7.jpg',
-            'img/8.jpg'
+            'img/6.jpg'
         ];
         
         let currentIndex = 0;
         let isAnimating = false;
 
         function initCarousel() {
-            const prevItem = document.querySelector('.carousel-item.prev');
-            const activeItem = document.querySelector('.carousel-item.active');
-            const nextItem = document.querySelector('.carousel-item.next');
-            
-            // Establecer imágenes iniciales
-            prevItem.style.backgroundImage = `url('${imageArray[(currentIndex - 1 + imageArray.length) % imageArray.length]}')`;
-            activeItem.style.backgroundImage = `url('${imageArray[currentIndex]}')`;
-            nextItem.style.backgroundImage = `url('${imageArray[(currentIndex + 1) % imageArray.length]}')`;
+            const items = document.querySelectorAll('.carousel-item');
+            items.forEach((item, index) => {
+                item.classList.remove('left', 'center', 'right');
+                if (index === 0) {
+                    item.classList.add('left');
+                } else if (index === 1) {
+                    item.classList.add('center');
+                } else if (index === 2) {
+                    item.classList.add('right');
+                }
+            });
         }
 
         function rotateCarousel() {
             if (isAnimating) return;
             isAnimating = true;
 
-            const prevItem = document.querySelector('.carousel-item.prev');
-            const activeItem = document.querySelector('.carousel-item.active');
-            const nextItem = document.querySelector('.carousel-item.next');
+            const items = document.querySelectorAll('.carousel-item');
+            
+            // Rotación circular: left -> center, center -> right, right -> left
+            items.forEach(item => {
+                if (item.classList.contains('left')) {
+                    item.classList.remove('left');
+                    item.classList.add('center');
+                } else if (item.classList.contains('center')) {
+                    item.classList.remove('center');
+                    item.classList.add('right');
+                } else if (item.classList.contains('right')) {
+                    item.classList.remove('right');
+                    item.classList.add('left');
+                }
+            });
 
-            // Animar ambas transiciones simultáneamente
-            prevItem.classList.add('slide-left');
-            activeItem.classList.add('slide-right');
+            // Actualizar imágenes
+            const leftItem = document.querySelector('.left');
+            const centerItem = document.querySelector('.center');
+            const rightItem = document.querySelector('.right');
+            
+            // Rotar el array de imágenes
+            const temp = imageArray[0];
+            imageArray[0] = imageArray[2];
+            imageArray[2] = imageArray[1];
+            imageArray[1] = temp;
+            
+            // Aplicar nuevas imágenes
+            leftItem.style.backgroundImage = `url('${imageArray[0]}')`;
+            centerItem.style.backgroundImage = `url('${imageArray[1]}')`;
+            rightItem.style.backgroundImage = `url('${imageArray[2]}')`;
 
-            // Actualizar índices
-            currentIndex = (currentIndex + 1) % imageArray.length;
-
-            setTimeout(() => {
-                // Remover clases de animación
-                prevItem.classList.remove('slide-left');
-                activeItem.classList.remove('slide-right');
-
-                // Reorganizar elementos
-                prevItem.classList.remove('prev');
-                activeItem.classList.remove('active');
-                nextItem.classList.remove('next');
-
-                // Asignar nuevas posiciones
-                activeItem.classList.add('prev');
-                nextItem.classList.add('active');
-                prevItem.classList.add('next');
-
-                // Actualizar imágenes
-                const newNextIndex = (currentIndex + 1) % imageArray.length;
-                prevItem.style.backgroundImage = `url('${imageArray[(currentIndex - 1 + imageArray.length) % imageArray.length]}')`;
-                nextItem.style.backgroundImage = `url('${imageArray[newNextIndex]}')`;
-
-                isAnimating = false;
-            }, 800);
+            isAnimating = false;
         }
 
         // Inicializar carrusel

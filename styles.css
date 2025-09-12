@@ -146,92 +146,36 @@ body {
     align-items: center;
 }
 
-/* Carrusel styles */
+/* Carrusel circular styles */
 .carousel-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
     margin: 40px 0;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.carousel-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .carousel-item {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 15px;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.6;
-    transform: scale(0.8);
-}
-
-.carousel-item.prev {
-    left: 10%;
-    transform: scale(0.8) translateX(-50px);
-    z-index: 1;
-}
-
-.carousel-item.active {
-    left: 50%;
-    transform: scale(1) translateX(-50%);
+    transition: all 0.8s ease-in-out;
     opacity: 1;
-    z-index: 3;
+    transform: scale(1);
 }
 
-.carousel-item.next {
-    right: 10%;
-    transform: scale(0.8) translateX(50px);
-    z-index: 1;
+.carousel-item.left {
+    transform: scale(0.8);
+    opacity: 0.7;
 }
 
-/* Animaciones del carrusel */
-.carousel-item.slide-left {
-    animation: slideLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.carousel-item.center {
+    transform: scale(1);
+    opacity: 1;
 }
 
-.carousel-item.slide-right {
-    animation: slideRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes slideLeft {
-    0% {
-        left: 10%;
-        transform: scale(0.8) translateX(-50px);
-        opacity: 0.6;
-    }
-    100% {
-        left: 50%;
-        transform: scale(1) translateX(-50%);
-        opacity: 1;
-    }
-}
-
-@keyframes slideRight {
-    0% {
-        left: 50%;
-        transform: scale(1) translateX(-50%);
-        opacity: 1;
-    }
-    100% {
-        right: 10%;
-        transform: scale(0.8) translateX(50px);
-        opacity: 0.6;
-    }
+.carousel-item.right {
+    transform: scale(0.8);
+    opacity: 0.7;
 }
     .photo-placeholder {
         display: flex;
@@ -281,7 +225,8 @@ body {
     .intro-text { /*Contenedor de nos complace y nombres*/
         font-size: 1.3rem;
         line-height: 1.6;
-        width: 80%;
+        width: 100%;
+        max-width: 800px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -291,10 +236,6 @@ body {
         font-family: 'Arial', sans-serif;
         letter-spacing: 3px;
         margin: 0 auto 5% auto;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-left: 0 !important;
     }
     #div1{
         justify-content: center;
@@ -1319,23 +1260,6 @@ body {
 
     .large-photo {
         height: 40vh;
-    }
-
-    .carousel-container {
-        height: 300px;
-    }
-
-    .carousel-item {
-        width: 180px;
-        height: 180px;
-    }
-
-    .carousel-item.prev {
-        left: 5%;
-    }
-
-    .carousel-item.next {
-        right: 5%;
     }
 
     .location-container {
