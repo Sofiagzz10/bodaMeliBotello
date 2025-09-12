@@ -1088,6 +1088,13 @@ body {
     .logo{
         width: 20%;
     }
+    .save-date-container {
+        grid-template-columns: 1fr 1fr;
+       
+    }
+    .details-header-image {
+        height: 30vh;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1265,12 +1272,15 @@ body {
         }
     
         .details-column {
-            margin-bottom: 40px; /* Espacio entre las secciones en móvil */
+            margin-bottom: 30px; /* Espacio entre las secciones en móvil */
         }
         .countdown-item{
             padding: 0 10px;
         }
-        
+        .column-title {
+            font-size: 1.7rem;
+        }
+   
 }
 
 @media (max-width: 500px){
@@ -1279,6 +1289,13 @@ body {
     }
 }
 @media (max-width: 480px) {
+    .location-image{
+        height: auto;
+        object-fit: contain; /* Altura automática */
+ }
+ .location-container{
+    height: auto;
+ }
     .panel {
         padding: 15px 0;
         width: 100vw;
@@ -1303,10 +1320,10 @@ body {
         margin: 0 auto 15% auto;
     }
     .address h2{
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
     .address p{
-        font-size: 0.5rem;
+        font-size: 0.4rem;
     }
     .boton-ad{
         font-size: 0.5rem;
@@ -1329,8 +1346,14 @@ body {
         font-size: 1.2rem;
     }
 
-    .dress-code-h2 {
+    .dress-code-h2, .account-bank {
         font-size: 1.1rem;
+    }
+    .account-name{
+        font-size: 0.9rem;
+    }
+    #accountNumber{
+        font-size: 0.9rem;
     }
 
     .dress-code-text, .gift-text {
@@ -1343,6 +1366,9 @@ body {
 
     .event {
         font-size: 1rem;
+    }
+    .event2{
+        font-size: 0.5rem;
     }
 
     .large-photo {
@@ -1407,8 +1433,11 @@ body {
         padding: 0;
     }
 
-    .title,.location-title, #sec4 {
-        font-size: 1.3rem;
+    .title {
+        font-size: 2.5rem;
+    }
+    .location-title, #sec4{
+        font-size: 2rem;
     }
 
     .save-date-image {
@@ -1428,10 +1457,6 @@ body {
         margin: 0;
     }
 
-    .title, .location-title, #sec4 {
-        font-size: 2.5rem;
-        margin: 10px 0;
-    }
 
     .date {
         font-size: 3rem;
