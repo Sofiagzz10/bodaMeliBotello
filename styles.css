@@ -156,20 +156,20 @@ body {
         height: 320px;
     }
     .photo-placeholder:nth-child(1){
-        background-image: url(/img/6.jpg);
+        background-image: url(img/6.jpg);
         animation: fadeIn 1.2s ease-out forwards;
         animation-delay: 0.5s;
         opacity: 0;
     }
     .photo-placeholder:nth-child(3){
-        background-image: url(/img/3.jpg);
+        background-image: url(img/3.jpg);
         animation: fadeIn 1.2s ease-out forwards;
         animation-delay: 1s;
         opacity: 0;
     }
     .photo-placeholder:nth-child(2) {
         height: 390px;
-        background-image: url(/img/2.jpg);
+        background-image: url(img/2.jpg);
         animation: fadeIn 1.2s ease-out forwards;
         animation-delay: 1.5s;
         opacity: 0;
@@ -252,7 +252,7 @@ body {
         justify-content: center;
     }
     .save-date-photo {
-        background-image: url(/img/1.jpg);
+        background-image: url(img/1.jpg);
         background-size: cover;
         background-position: center top !important;
         background-repeat: no-repeat;
@@ -374,7 +374,7 @@ body {
         justify-content: center;
     }
     .location-photo {
-        background-image: url(/img/4.jpg);
+        background-image: url(img/4.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
@@ -782,7 +782,7 @@ body {
 .details-header-image {
     width: 100vw; /* Ocupa el 100% del ancho de la ventana */
     height: 50vh; /* Ocupa el 50% de la altura de la ventana, ajústalo a tu gusto */
-    background-image: url(/img/9.jpg); /* <-- CAMBIA ESTA URL POR TU IMAGEN */
+    background-image: url(img/9.jpg); /* <-- CAMBIA ESTA URL POR TU IMAGEN */
     background-size: cover;
     background-position: 80% 20%;
     position: relative; /* Necesario para posicionar el título dentro */
