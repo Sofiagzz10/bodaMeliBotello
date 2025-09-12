@@ -374,7 +374,7 @@ body {
         justify-content: center;
     }
     .location-photo {
-        background-image: url(img/4.jpg);
+        background-image: url(/img/4.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
@@ -443,9 +443,9 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-.foto1{
+.foto1{ /*maybe mal*/
     flex: 1 1 300px;
-    background-image: url(fotos/4.jpg); /* Añade esta línea si quieres usar background-image */
+    background-image: url(/img/4.jpg); /* Añade esta línea si quieres usar background-image */
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
     background-size: cover; /* Estira la imagen para cubrir todo el contenedor */
     height: 77vh;
@@ -454,14 +454,14 @@ body {
     align-items: center;
     background-position: 50% 65%; /* Mueve la imagen hacia arriba */
 }
-#imagenconf{
+#imagenconf{ /*maybe mal*/
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center top;
     margin: 0;
     padding: 0;
-    background-image: url(fotos/foto8.jpg);
+    background-image: url(/img/8.jpg);
     background-size: cover; /* Escala la imagen para cubrir el contenedor sin distorsionarla */
     background-position: center center; 
 }
