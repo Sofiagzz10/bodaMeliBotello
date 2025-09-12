@@ -322,7 +322,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
         gap: 40px;
-        height: 80vh;
+        height: auto;
     }
     .save-date-image {
         display: flex;
