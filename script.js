@@ -188,6 +188,23 @@
             });
         });
 
+        // Agregar animaciones escalonadas a elementos específicos
+        function addStaggeredAnimation(selector, delay = 200) {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * delay);
+            });
+        }
+
+        // Aplicar animaciones escalonadas a elementos del timeline
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                addStaggeredAnimation('.timeline-item', 300);
+            }, 1000);
+        });
+
         // Función para editar respuesta
         function editResponse() {
             // Resetear variables de confirmación
