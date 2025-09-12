@@ -322,7 +322,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
         gap: 40px;
-        height: auto;
+        height: 80vh;
     }
     .save-date-image {
         display: flex;
@@ -436,7 +436,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        height: 80vh;
+        height: auto;
         margin-top: 40px;
     }
     .location-content {
@@ -459,7 +459,7 @@ body {
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;
-        background-position: 70% 30%; 
+        background-position: 65% 45%; 
         align-self: flex-start;
     }
     .location-details {
@@ -495,7 +495,7 @@ body {
         text-align: center;
         justify-content: center;
         margin: 0 auto 8% auto;
-        width: 50%;
+        width: 70%;
     }
     .address h2{   /*TÍTULOS DE NOMBRES DE EVENTOS : FATIMA Y ZANQ*/
         font-size: 1.5rem;
