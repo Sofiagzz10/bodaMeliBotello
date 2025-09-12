@@ -544,21 +544,21 @@ body {
     background-position: center center; 
 }
 .confirma{
-    flex:1 1 300px;
+    flex:1 1 50%;
     width: 100%; /* Ancho al 100% del contenedor */
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 300px;
+    height: 100vh;
     margin:0;
-    padding: 0;
+    padding: 2rem;
 }
 .confirma hr{
     color:#c7bbb0;
     width: 30%;
 }
-#sec4{
+ #sec4{
     font-size: 4.2rem;
     text-align: center;
     margin: 5% 0%;
@@ -567,7 +567,7 @@ body {
     font-family: 'Playfair Display', serif;
     width: 100%;
     font-weight:lighter;
-}
+} 
 #conf, #h11, #asis, #lin1{
     font-weight: 350;
     letter-spacing: 3px;
@@ -1076,9 +1076,7 @@ body {
 }
 
 @media (max-width: 922px){
-    #sec4{
-    font-size: 4rem; 
-    }
+  
     .social-media-container {
         margin-bottom: 3%;
     }
@@ -1116,7 +1114,7 @@ body {
         margin: 5% 0%;
     }
 
-    .title, .location-title {
+    .title, .location-title, #sec4 {
         font-size: 1.5rem;
     }
 
@@ -1409,7 +1407,7 @@ body {
         padding: 0;
     }
 
-    .title,.location-title {
+    .title,.location-title, #sec4 {
         font-size: 1.3rem;
     }
 
@@ -1430,7 +1428,7 @@ body {
         margin: 0;
     }
 
-    .title, .location-title {
+    .title, .location-title, #sec4 {
         font-size: 2.5rem;
         margin: 10px 0;
     }
@@ -1527,10 +1525,6 @@ body {
         flex: none !important;
         padding: 1rem !important;
     }
-
-    #sec4 {
-        font-size: 2.5rem !important;
-    }
     .confirma{
         width: 100%;
         padding:10px;
@@ -1539,18 +1533,6 @@ body {
         width: 60%;     
        }
       
-}
-@media (max-width: 450px){
-    #sec4{
-        font-size: 4rem;
-    }
-    
-}
-
-@media(max-width: 330px){
-    #sec4{
-        font-size: 3rem;
-    }
 }
 
 
