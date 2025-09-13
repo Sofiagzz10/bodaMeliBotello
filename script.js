@@ -227,48 +227,71 @@
         });
 
         // Función para editar respuesta
-        function editResponse() {
-            // Resetear variables de confirmación
-            if (typeof confirmacion !== 'undefined') {
-                confirmacion = 'no ha confirmado';
+        async function editResponse() {
+            const id = window.location.pathname.split('/').pop();
+            
+            try {
+                // Hacer request a la base de datos para resetear la confirmación
+                const response = await fetch(`/api/invitado/${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        confirmacion: false, 
+                        invitadosConfirmados: 0 
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('Confirmación reseteada:', result);
+                
+                // Obtener el número de invitados permitidos
+                const invitadosPermitidos = parseInt(document.getElementById('allowedGuests').textContent);
+                
+                // Mostrar formulario de nuevo
+                document.getElementById('h11').style.display = 'block';
+                document.getElementById('asis').style.display = 'block';
+                document.querySelector('.yes-no-input').style.display = 'flex';
+                document.getElementById('conf').style.display = 'block';
+                document.querySelector('.number-input').style.display = 'flex';
+                document.getElementById('boton2').style.display = 'block';
+                document.getElementById('editResponse').style.display = 'none';
+                
+                // Ocultar mensajes de confirmación
+                document.getElementById('yaconf').style.display = 'none';
+                document.getElementById('yaconf2').style.display = 'none';
+                
+                // Mostrar el mensaje de invitados permitidos
+                if (invitadosPermitidos == 1) {
+                    document.getElementById('tienes1').style.display = 'block';
+                    document.getElementById('tienes2').style.display = 'none';
+                    const tienes1Element = document.getElementById('tienes1');
+                    tienes1Element.innerHTML = `ESTA INVITACIÓN ES PARA <span id="allowedGuests">${invitadosPermitidos}</span> PERSONA`;
+                } else {
+                    document.getElementById('tienes1').style.display = 'none';
+                    document.getElementById('tienes2').style.display = 'block';
+                    const tienes2Element = document.getElementById('tienes2');
+                    tienes2Element.innerHTML = `ESTA INVITACIÓN ES PARA <span id="allowedGuests">${invitadosPermitidos}</span> PERSONAS`;
+                }
+                
+                // Configurar valores predeterminados
+                document.getElementById('choice').value = 'yes';
+                document.getElementById('quantity').value = invitadosPermitidos;
+                document.getElementById('quantity').max = invitadosPermitidos;
+                
+                // Activar botón SÍ y desactivar NO
+                document.getElementById('yes').classList.add('active');
+                document.getElementById('no').classList.remove('active');
+                
+            } catch (error) {
+                console.error('Error al resetear confirmación:', error);
+                alert('Hubo un error al resetear la confirmación. Por favor, intenta de nuevo.');
             }
-            if (typeof invitadosConfirmados !== 'undefined') {
-                invitadosConfirmados = '';
-            }
-            
-            // Obtener el número de invitados permitidos
-            const invitadosPermitidos = parseInt(document.getElementById('allowedGuests').textContent);
-            
-            // Mostrar formulario de nuevo
-            document.getElementById('h11').style.display = 'block';
-            document.getElementById('asis').style.display = 'block';
-            document.querySelector('.yes-no-input').style.display = 'flex';
-            document.getElementById('conf').style.display = 'block';
-            document.querySelector('.number-input').style.display = 'flex';
-            document.getElementById('boton2').style.display = 'block';
-            document.getElementById('editResponse').style.display = 'none';
-            
-            // Ocultar mensajes de confirmación
-            document.getElementById('yaconf').style.display = 'none';
-            document.getElementById('yaconf2').style.display = 'none';
-            
-            // Mostrar el mensaje de invitados permitidos
-            if (invitadosPermitidos == 1) {
-                document.getElementById('tienes1').style.display = 'block';
-                document.getElementById('tienes2').style.display = 'none';
-            } else {
-                document.getElementById('tienes1').style.display = 'none';
-                document.getElementById('tienes2').style.display = 'block';
-            }
-            
-            // Configurar valores predeterminados
-            document.getElementById('choice').value = 'yes';
-            document.getElementById('quantity').value = invitadosPermitidos;
-            document.getElementById('quantity').max = invitadosPermitidos;
-            
-            // Activar botón SÍ y desactivar NO
-            document.getElementById('yes').classList.add('active');
-            document.getElementById('no').classList.remove('active');
         }
     
             //función del back
@@ -300,8 +323,10 @@
                 document.getElementById('tienes2').style.display = 'none';
                 document.getElementById('yaconf').style.display = 'none';
                 document.getElementById('yaconf2').style.display = 'none';
-                document.getElementById('allowedGuests').textContent = invitadosPermitidos;
-    
+                
+                // Actualizar el texto con el número correcto de invitados
+                const tienes1Element = document.getElementById('tienes1');
+                tienes1Element.innerHTML = `ESTA INVITACIÓN ES PARA <span id="allowedGuests">${invitadosPermitidos}</span> PERSONA`;
             }
             function mostrarConfirmacion2(invitadosPermitidos) {
                 document.getElementById('h11').style.display = 'block';

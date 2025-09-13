@@ -388,7 +388,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 16% auto 16% auto;
+        margin: 25% auto 23% auto;
     }
 
     .countdown-item {
@@ -1520,7 +1520,6 @@ body {
         grid-template-columns: 1fr; /* Una sola columna */
         gap: 20px; /* Reducido el gap */
         height: auto; /* Altura automática */
-        margin: 0 20px; /* Márgenes simétricos */
         padding: 0;
     }
 
