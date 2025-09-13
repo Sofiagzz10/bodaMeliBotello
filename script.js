@@ -215,7 +215,11 @@
                 invitadosConfirmados = '';
             }
             
+            // Obtener el número de invitados permitidos
+            const invitadosPermitidos = parseInt(document.getElementById('allowedGuests').textContent);
+            
             // Mostrar formulario de nuevo
+            document.getElementById('h11').style.display = 'block';
             document.getElementById('asis').style.display = 'block';
             document.querySelector('.yes-no-input').style.display = 'flex';
             document.getElementById('conf').style.display = 'block';
@@ -223,10 +227,27 @@
             document.getElementById('boton2').style.display = 'block';
             document.getElementById('editResponse').style.display = 'none';
             
-            // Resetear valores
-            document.getElementById('choice').value = 'no';
-            document.getElementById('quantity').value = '0';
-            document.querySelectorAll('.option').forEach(btn => btn.classList.remove('active'));
+            // Ocultar mensajes de confirmación
+            document.getElementById('yaconf').style.display = 'none';
+            document.getElementById('yaconf2').style.display = 'none';
+            
+            // Mostrar el mensaje de invitados permitidos
+            if (invitadosPermitidos == 1) {
+                document.getElementById('tienes1').style.display = 'block';
+                document.getElementById('tienes2').style.display = 'none';
+            } else {
+                document.getElementById('tienes1').style.display = 'none';
+                document.getElementById('tienes2').style.display = 'block';
+            }
+            
+            // Configurar valores predeterminados
+            document.getElementById('choice').value = 'yes';
+            document.getElementById('quantity').value = invitadosPermitidos;
+            document.getElementById('quantity').max = invitadosPermitidos;
+            
+            // Activar botón SÍ y desactivar NO
+            document.getElementById('yes').classList.add('active');
+            document.getElementById('no').classList.remove('active');
         }
     
             //función del back
@@ -318,6 +339,8 @@
                     
                 } else {
                     mostrarParrafoyaConf();
+                    // Mostrar botón de editar respuesta cuando ya hay confirmación
+                    document.getElementById('editResponse').style.display = 'block';
                 }
             
                 } catch (error) {

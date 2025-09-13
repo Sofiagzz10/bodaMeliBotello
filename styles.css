@@ -438,6 +438,8 @@ body {
         gap: 40px;
         height: auto;
         margin-top: 40px;
+        overflow: hidden; /* Elimina scroll horizontal y vertical */
+
     }
     .location-content {
         display: flex;
