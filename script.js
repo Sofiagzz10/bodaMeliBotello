@@ -201,8 +201,29 @@
         // Aplicar animaciones escalonadas a elementos del timeline
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
-                addStaggeredAnimation('.timeline-item', 300);
-            }, 1000);
+                addStaggeredAnimation('.timeline-item', 500);
+            }, 1500);
+        });
+
+        // Aplicar animaciones escalonadas a la sección "Nos complace invitarte"
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                addStaggeredAnimation('#div1, #div2', 800);
+            }, 2000);
+        });
+
+        // Aplicar animaciones escalonadas a la sección "Save the Date"
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                addStaggeredAnimation('.save-date-image, .save-date-content', 600);
+            }, 2500);
+        });
+
+        // Aplicar animaciones escalonadas a la sección de ubicación
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                addStaggeredAnimation('.location-image', 400);
+            }, 3000);
         });
 
         // Función para editar respuesta
