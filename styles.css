@@ -580,6 +580,7 @@ body {
     margin: 5% 0;
     color: #000;
     font-size: 2.5rem;
+    font-weight: 100;
 
 }
 #tienes1, #tienes2, #asis, #conf, .yes-no-input{
@@ -1119,7 +1120,7 @@ body {
 
     .save-date-container {
         gap: 20px;
-        height: 70vh;
+        height: 80vh;
     }
 
     .save-date-content {
