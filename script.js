@@ -238,8 +238,8 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({ 
-                        confirmacion: false, 
-                        invitadosConfirmados: 0 
+                        confirmacion: "no ha confirmado", 
+                        invitadosConfirmados: "" 
                     }),
                 });
 
