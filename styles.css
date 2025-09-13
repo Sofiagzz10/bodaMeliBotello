@@ -581,12 +581,7 @@ body {
     margin-top: 3%;
 
 }
-#lin1{
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    font-family: 'Playfair Display', serif;
-    color: #333;
-}
+
 #h11{
     font-family: 'Parisienne', cursive;
     margin: 5% 0;
@@ -599,15 +594,10 @@ body {
 /* #tienes1, #tienes2, #asis, #conf, .yes-no-input{
     margin-top: 5%;
 } */
-#lin1{
-    margin-top: -8%;
-}  
 
 .cont5{
     text-align: center;
     align-items: center;    
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
