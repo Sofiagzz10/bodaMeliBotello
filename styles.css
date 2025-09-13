@@ -388,7 +388,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 8% auto 8% auto;
+        margin: 12% auto 12% auto;
     }
 
     .countdown-item {
