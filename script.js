@@ -239,7 +239,8 @@
                     },
                     body: JSON.stringify({ 
                         confirmacion: "no ha confirmado", 
-                        invitadosConfirmados: "" 
+                        invitadosConfirmados: "",
+                        reset: true
                     }),
                 });
 
