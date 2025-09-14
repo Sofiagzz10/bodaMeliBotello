@@ -64,7 +64,7 @@ body {
 /* Varias Secciones */
 
 /* Títulos */
-.title, .location-title{
+.location-title{
     font-size: 4.2rem;
     text-align: center;
     margin: 5% 0%;
@@ -74,6 +74,15 @@ body {
     width: 80%;
 }
 
+.title{
+    font-size: 4.2rem;
+    text-align: center;
+    margin: 30% 0%;
+    color: #000;
+    letter-spacing: 0.1em;
+    font-family: 'Playfair Display', serif;
+    width: 80%;
+}
 
 /*Fotos*/
 .large-photo {
