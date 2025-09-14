@@ -226,13 +226,6 @@
             }, 3000);
         });
 
-        // Aplicar animación específica a "Favor de no llevar niños"
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                addStaggeredAnimation('.dress-code-ninos', 200);
-            }, 4000);
-        });
-
         // Función para editar respuesta
         async function editResponse() {
             const id = window.location.pathname.split('/').pop();
