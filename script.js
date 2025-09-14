@@ -493,16 +493,4 @@
         });
     });
 
-    window.addEventListener('load', () => {
-    const audio = document.getElementById('musicaFondo');
     
-    // Intentar reproducir automáticamente
-    audio.play().catch(e => {
-        console.log('Autoplay bloqueado, se necesita interacción del usuario');
-        
-        // Reproducir después del primer clic
-        document.addEventListener('click', () => {
-            audio.play();
-        }, { once: true });
-    });
-});
