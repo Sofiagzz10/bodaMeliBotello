@@ -1132,6 +1132,9 @@ body {
     #tienes1 , #tienes2{
         font-size: 1.2rem;
     }
+    #asis{
+        font-size: 1rem;
+    }
     .panel:nth-child(3) {
         min-height: auto !important;
     }
