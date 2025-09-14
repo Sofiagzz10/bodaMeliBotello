@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación de Boda - Melissa y Joel</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -113,7 +112,41 @@
             </div>
         </div>
 
-        <!-- Sección 4: Cronograma -->
+        <!-- Sección 4: Confirmación -->
+        <section class="seccion4">
+            <div class="cont4">
+                <div class="foto1">
+                    <img src="img/8.jpg" alt="Imagen" id="imagenconf">
+                </div>
+                <div class="confirma slide-in-right">
+                    <h1 id="sec4" class="fade-in">CONFIRMACIÓN</h1>
+                    <hr id="lin1" style = "display: none;">
+                    <div class="cont5">
+                        <h1 id="h11">¡Hola, <span id = "guestName"></span>!</h1>
+                        <p id = "yaconf" style = "display: none;"> GRACIAS POR CONFIRMAR LA ASISTENCIA</p>
+                        <p id = "yaconf2" style = "display: none;"> CUALQUIER DUDA O COMENTARIO <br> ¡CONTÁCTANOS!</p>
+                        <p id="tienes1" style = "display: none;">ESTA INVITACIÓN ES PARA <span id="allowedGuests"></span> PERSONA</p>
+                        <p id="tienes2" style = "display: none;">ESTA INVITACIÓN ES PARA <span id="allowedGuests"></span> PERSONAS</p>
+                        <p id="asis" style = "display: none;">¿CONFIRMAS LA ASISTENCIA?</p>
+                        <div class="yes-no-input" style = "display: none;">
+                            <button id="yes" class="option">SÍ</button>
+                            <button id="no" class="option">NO</button>
+                            <input type="hidden" id="choice" value="no" />
+                        </div>
+                        <p id="conf" style = "display: none;">CONFIRMA CUÁNTOS ASISTIRÁN:</p>
+                        <div class="number-input" style = "display: none;">
+                            <button id="decrement">-</button>
+                            <input type="text" id="quantity" value="0" readonly/>
+                            <button id="increment">+</button>
+                        </div>
+                        <button id="boton2" onclick="submitResponse()" style = "display: none;">Enviar Respuesta</button>
+                        <button id="editResponse" onclick="editResponse()" style = "display: none;">Editar Respuesta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Cronograma -->
         <div class="panel">
             <div class="section">
                 <div class="title fade-in" style="text-align: center; width: 100%; margin: 2rem auto 0 auto;">ITINERARIO</div>
@@ -152,7 +185,7 @@
             </div>
         </div>
 
-        <!-- Sección 5: Detalles -->
+        <!-- Sección 6: Detalles -->
         <div class="panel">
             <div class="details-container">
         
@@ -161,7 +194,7 @@
                 </div>
                 <div class = "dress-code-ninos scale-in">FAVOR DE NO LLEVAR NIÑOS</div>
                 <div class="details-content">
-
+        
                     <div class="details-column dress-code-column slide-in-left">
                         <div class="column-title">Código de Vestimenta</div>
                         <h2 class = "dress-code-header">FORMAL</h2>
@@ -191,41 +224,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Sección 6: Confirmación -->
-        <section class="seccion4">
-            <div class="cont4">
-                <div class="foto1">
-                    <img src="img/8.jpg" alt="Imagen" id="imagenconf">
-                </div>
-                <div class="confirma slide-in-right">
-                    <h1 id="sec4" class="fade-in">CONFIRMACIÓN</h1>
-                    <hr id="lin1" style = "display: none;">
-                    <div class="cont5">
-                        <h1 id="h11">¡Hola, <span id = "guestName"></span>!</h1>
-                        <p id = "yaconf" style = "display: none;"> GRACIAS POR CONFIRMAR LA ASISTENCIA</p>
-                        <p id = "yaconf2" style = "display: none;"> CUALQUIER DUDA O COMENTARIO <br> ¡CONTÁCTANOS!</p>
-                        <p id="tienes1" style = "display: none;">ESTA INVITACIÓN ES PARA <span id="allowedGuests"></span> PERSONA</p>
-                        <p id="tienes2" style = "display: none;">ESTA INVITACIÓN ES PARA <span id="allowedGuests"></span> PERSONAS</p>
-                        <p id="asis" style = "display: none;">¿CONFIRMAS LA ASISTENCIA?</p>
-                        <div class="yes-no-input" style = "display: none;">
-                            <button id="yes" class="option">SÍ</button>
-                            <button id="no" class="option">NO</button>
-                            <input type="hidden" id="choice" value="no" />
-                        </div>
-                        <p id="conf" style = "display: none;">CONFIRMA CUÁNTOS ASISTIRÁN:</p>
-                        <div class="number-input" style = "display: none;">
-                            <button id="decrement">-</button>
-                            <input type="text" id="quantity" value="0" readonly/>
-                            <button id="increment">+</button>
-                        </div>
-                        <button id="boton2" onclick="submitResponse()" style = "display: none;">Enviar Respuesta</button>
-                        <button id="editResponse" onclick="editResponse()" style = "display: none;">Editar Respuesta</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <footer class="footer fade-in">
             <div class="logo-container">
                     <img src="img/craftanalogo.png" alt="craftana.details" class="logo">
