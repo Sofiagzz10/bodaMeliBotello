@@ -388,7 +388,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 25rem auto 25rem auto;
+        margin: 8rem auto 8rem auto;
     }
 
     .countdown-item {
@@ -581,7 +581,12 @@ body {
     margin-top: 3%;
 
 }
-
+#lin1{
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}
 #h11{
     font-family: 'Parisienne', cursive;
     margin: 5% 0;
@@ -594,10 +599,15 @@ body {
 /* #tienes1, #tienes2, #asis, #conf, .yes-no-input{
     margin-top: 5%;
 } */
+#lin1{
+    margin-top: -8%;
+}  
 
 .cont5{
     text-align: center;
     align-items: center;    
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -923,7 +933,7 @@ body {
     color: #333;
 }
 
-.dress-code-header {
+.dress-code-header{ 
     font-family: 'Arial', sans-serif;
     letter-spacing: 3px;
     font-size: 1.5rem;
@@ -938,7 +948,6 @@ body {
     font-size: 1.5rem;
     color: #666;
 }
-
 .dress-code-h2{
     font-family: 'Arial', sans-serif;
     letter-spacing: 2px;
@@ -1273,8 +1282,7 @@ body {
             margin: 3rem auto 0 auto !important;
         }
         .details-content {
-            flex-direction: column; 
-            padding: 20px 20PX;/* Las columnas se apilan una sobre otra */
+            flex-direction: column; /* Las columnas se apilan una sobre otra */
         }
     
         .details-column {
@@ -1292,6 +1300,10 @@ body {
         .carousel-container {
             margin-top: 15%;
         }
+        
+    .countdown-container {
+        margin: 15rem auto 15rem auto
+    }
    
 }
 
@@ -1330,11 +1342,6 @@ body {
     color: #000 !important;
     border: none !important;
     background: none !important;
- }
-    .dress-code-ninos{
-        margin-top: 12%;
-       margin-bottom: 2%;
-    }
  }
 
 /* Estilos específicos para iPad (768px - 1024px) */
@@ -1534,9 +1541,6 @@ body {
 
     .address {
         font-size: 0.9rem;
-    }
-    #tienes1 , #tienes2{
-        font-size: 1.1rem;
     }
 
     .save-date-container {
@@ -1816,19 +1820,5 @@ html {
 .location-image.visible {
     opacity: 1;
     transform: translateY(0) scale(1) rotateY(0deg);
-    filter: blur(0px);
-}
-
-/* Animación específica para "Favor de no llevar niños" */
-.dress-code-ninos {
-    opacity: 0;
-    transform: scale(0.5) translateY(50px) rotateX(20deg);
-    transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    filter: blur(3px);
-}
-
-.dress-code-ninos.visible {
-    opacity: 1;
-    transform: scale(1) translateY(0) rotateX(0deg);
     filter: blur(0px);
 }
