@@ -1129,7 +1129,9 @@ body {
     .cont4{
         margin-top: 5%;
     }
-
+    #tienes1 , #tienes2{
+        font-size: 1.2rem;
+    }
     .panel:nth-child(3) {
         min-height: auto !important;
     }
@@ -1318,7 +1320,10 @@ body {
         }
         
     .countdown-container {
-        margin: 15rem auto 15rem auto
+        margin: 4rem auto 6rem auto
+    }
+   .dress-code-ninos{
+        margin-top: 10%;
     }
    
 }
