@@ -883,6 +883,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 15%;
+}
+
+/* Panel de detalles - separación del itinerario */
+.panel:nth-child(5) {
+    margin-top: 80px;
+    padding-top: 40px;
 }
 
 /* --- Fila Superior (Imagen y Título) --- */
@@ -1100,6 +1107,15 @@ body {
     }
     .details-header-image {
         height: 30vh;
+    }
+
+    .details-container {
+        margin-top: 50px;
+    }
+
+    .panel:nth-child(5) {
+        margin-top: 40px;
+        padding-top: 20px;
     }
 }
 
