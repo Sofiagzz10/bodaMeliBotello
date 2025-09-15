@@ -1152,10 +1152,10 @@ body {
         margin-top: 5%;
     }
     #tienes1 , #tienes2{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     #asis{
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     .panel:nth-child(3) {
         min-height: auto !important;
