@@ -1137,6 +1137,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    #h11{
+        font-size: 2rem;
+    }
     .panel {
         padding: 20px 0;
         width: 100vw;
