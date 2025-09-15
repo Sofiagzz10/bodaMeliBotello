@@ -584,13 +584,13 @@ body {
     width: 100%;
     font-weight:lighter;
 } 
-#asis, #conf{
+#asis, #conf, #yaconf2{
     font-family: Arial, sans-serif;
     letter-spacing: 2px;
     font-weight: 100;
     color: #6f6d6d;
     font-size: 1.2rem;
-    margin-top: 3%;
+    margin-top: 4%;
 }
 
 #boton2{
@@ -654,7 +654,7 @@ body {
     font-weight: 350;
     letter-spacing: 3px;  
 }
-#tienes1 , #tienes2{
+#tienes1 , #tienes2, #yaconf{
     color:#6f6d6d;
     font-size: 1.8rem;
     font-weight: 350;
@@ -1151,10 +1151,10 @@ body {
     .cont4{
         margin-top: 5%;
     }
-    #tienes1 , #tienes2{
+    #tienes1 , #tienes2,  #yaconf{
         font-size: 1rem;
     }
-    #asis{
+    #asis, #conf, #yaconf2{
         font-size: 0.8rem;
     }
     .panel:nth-child(3) {
