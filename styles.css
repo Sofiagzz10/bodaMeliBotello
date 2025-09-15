@@ -318,9 +318,11 @@ body {
         letter-spacing: 0px;
     }
     .frase{
+        display: flex;
         justify-content: center;
         align-items: center;
-        margin: 3rem 0;
+        align-content: center;
+        margin: 3rem auto;
         text-align: center;
         font-size: 1.8rem;
         color: #6f6d6d;
