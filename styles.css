@@ -1345,7 +1345,7 @@ body {
     }
 }
 @media (max-width: 480px) {
-     .panel:nth-child(4) {
+     .panel:nth-child(5) {
         margin-top: 0;
         padding-top: 0;
     }
