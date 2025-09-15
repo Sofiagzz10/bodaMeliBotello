@@ -307,7 +307,7 @@ body {
         font-family: "Parisienne", cursive;
         letter-spacing: 0px;
     }    
-    #nomma,.frase{
+    #nomma{
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -318,7 +318,15 @@ body {
         letter-spacing: 0px;
     }
     .frase{
+        justify-content: center;
+        align-items: center;
         margin: 3rem 0;
+        text-align: center;
+        font-size: 1.8rem;
+        color: #6f6d6d;
+        font-family: "Parisienne", cursive;
+        letter-spacing: 0px;
+        width: 85%;
     }
     .save-date-container {
         display: grid;
@@ -958,7 +966,7 @@ body {
 .dress-code-ninos{
     margin-top: 5%;
     font-family: 'Arial', sans-serif;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     font-size: 1.5rem;
     color: #666;
     width: 70%;
