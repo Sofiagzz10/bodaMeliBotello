@@ -307,7 +307,7 @@ body {
         font-family: "Parisienne", cursive;
         letter-spacing: 0px;
     }    
-    #nomma{
+    #nomma,.frase{
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -316,6 +316,9 @@ body {
         color: #6f6d6d;
         font-family: "Parisienne", cursive;
         letter-spacing: 0px;
+    }
+    .frase{
+        margin: 4rem 0;
     }
     .save-date-container {
         display: grid;
@@ -1303,6 +1306,9 @@ body {
             margin-top: 4%;
             font-size: 1.4rem;   
         }
+        .frase{
+            font-size: 1.4rem;
+        }
         #nompa{
             margin-top: -10%;
             font-size: 1.4rem;
@@ -1345,6 +1351,9 @@ body {
     }
 }
 @media (max-width: 480px) {
+     .panel:nth-child(4) {
+        padding-top: 10px;
+    }
      .panel:nth-child(5) {
         margin-top: 0;
         padding-top: 0;
@@ -1683,7 +1692,7 @@ body {
         font-size: 18px;
     }
 
-    #nompa, #nomma{
+    #nompa, #nomma, .frase{
         font-size: 1.1rem;
     }
 
