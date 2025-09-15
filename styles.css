@@ -527,7 +527,7 @@ body {
     box-sizing: border-box;
 }
 .panel:nth-child(4){
-    margin-top: 15%;
+    margin-top: 30%;
 }
 .foto1{ /*maybe mal*/
     flex: 1 1 300px;
@@ -896,10 +896,10 @@ body {
 }
 
 /* Panel de detalles - separación del itinerario */
-.panel:nth-child(5) {
+/* .panel:nth-child(5) {
     margin-top: 80px;
     padding-top: 40px;
-}
+} */
 
 /* --- Fila Superior (Imagen y Título) --- */
 .details-header-image {
