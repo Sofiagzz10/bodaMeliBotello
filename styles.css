@@ -527,7 +527,7 @@ body {
     box-sizing: border-box;
 }
 .panel:nth-child(4){
-    margin-top: 30%;
+    margin-top: 15%;
 }
 .foto1{ /*maybe mal*/
     flex: 1 1 300px;
@@ -733,9 +733,7 @@ body {
 
 
 /* Sección 5: Cronograma */
-.panel:nth-child(4){
-    margin-top: 0;
-}
+
 .section:nth-child(4){
     animation-delay: 1.3s; 
 }
