@@ -74,9 +74,6 @@ body {
     width: 80%;
 }
 
-.panel:nth-child(4){
-    margin-top: 15%;
-}
 
 /*Fotos*/
 .large-photo {
@@ -526,6 +523,9 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+.panel:nth-child(4){
+    margin-top: 15%;
+}
 .foto1{ /*maybe mal*/
     flex: 1 1 300px;
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
@@ -730,6 +730,9 @@ body {
 
 
 /* Sección 5: Cronograma */
+.panel:nth-child(4){
+    margin-top: 0;
+}
 .section:nth-child(4){
     animation-delay: 1.3s; 
 }
@@ -1342,6 +1345,10 @@ body {
     }
 }
 @media (max-width: 480px) {
+     .panel:nth-child(4) {
+        margin-top: 0;
+        padding-top: 0;
+    }
     .location-image{
         height: auto;
         object-fit: contain; /* Altura automática */
