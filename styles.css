@@ -543,7 +543,7 @@ body {
     flex: 1 1 300px;
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
     background-size: cover; /* Estira la imagen para cubrir todo el contenedor */
-    height: 80vh;
+    height: 83vh;
     display: flex;
     justify-content: center;
     align-items: center;
