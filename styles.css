@@ -555,7 +555,6 @@ body {
     object-fit: cover;
     object-position: center top;
     margin: 0;
-    padding: 0 20px;
     background-size: cover; /* Escala la imagen para cubrir el contenedor sin distorsionarla */
     background-position: center center; 
 }
