@@ -543,7 +543,7 @@ body {
     flex: 1 1 300px;
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
     background-size: cover; /* Estira la imagen para cubrir todo el contenedor */
-    height: 77vh;
+    height: auto;/*77vh;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1077,9 +1077,9 @@ body {
         width: 100%;
         flex: 0 0 auto;
     }
-    .foto1{
+    /* .foto1{
         height: 50vh;
-    }
+    } */
     #imagenconf{
         height: 100%;
         width: 100%;
@@ -1096,14 +1096,14 @@ body {
 }
 
 @media(orientation: landscape) and (max-height: 700px) {
-    .foto1{
+    /* .foto1{
         height:90vh
-    }
+    } */
 }
 @media(orientation: landscape) and (max-height: 590px) {
-    .foto1{
+    /* .foto1{
         height:100vh
-    }
+    } */
 }
 
 @media (max-width: 922px){
@@ -1712,10 +1712,10 @@ body {
         height: auto !important;
     }
 
-    .foto1 {
+    /* .foto1 {
         height: 50vh !important;
         flex: none !important;
-    }
+    } */
 
     .confirma {
         height: auto !important;
