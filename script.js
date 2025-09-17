@@ -25,7 +25,7 @@
             function addToCalendar() {
                 const event = {
                     title: 'Boda de Melissa y Joel',
-                    start: '2025-10-25T19:30:00',
+                    start: '2025-10-25T19:00:00',
                     end: '2025-10-26T02:00:00',
                     location: 'Zanq by Cinco Catering',
                     description: 'Nos complace invitarte a compartir con nosotros el comienzo de nuestra vida juntos, con la bendición de Dios y nuestros padres.'
